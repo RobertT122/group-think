@@ -4,10 +4,12 @@ const bcrypt = require('bcryptjs');
 const User = require('../../models/User');
 const keys = require('../../config/keys');
 const jwt = require('jsonwebtoken');
+const passport = require('passport');
 
 router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
 
 
+// create a user
 router.post('/register', (req, res) => {
   User.findOne({ email: req.body.email })
     .then(user => {
@@ -34,6 +36,8 @@ router.post('/register', (req, res) => {
     })
 })
 
+
+// login route for a user
 router.post('/login', (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
@@ -47,12 +51,11 @@ router.post('/login', (req, res) => {
       bcrypt.compare(password, user.password)
   .then(isMatch => {
     if (isMatch) {
-      const payload = {id: user.id, username: user.username};
+      const payload = {id: user.id, email: user.email, username: user.username};
 
       jwt.sign(
         payload,
         keys.secretOrKey,
-        // Tell the key to expire in one hour
         {expiresIn: 3600},
         (err, token) => {
           res.json({
@@ -65,6 +68,15 @@ router.post('/login', (req, res) => {
     }
   })
   })
+})
+
+// see current user
+router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
+  res.json({
+    id: req.user.id,
+    handle: req.user.handle,
+    email: req.user.email
+  });
 })
 
 module.exports = router;
