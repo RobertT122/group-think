@@ -1,6 +1,6 @@
  import React from 'react';
  
- export default function UserProfile() {
+ export default function UserProfile({currentUser}) {
      return (
          <div className='user-profile-container'>
             <div className='user-image-container'></div>
@@ -9,4 +9,3 @@
          </div>
      )
  }
- 
