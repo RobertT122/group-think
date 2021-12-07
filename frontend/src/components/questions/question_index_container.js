@@ -1,13 +1,14 @@
 import { connect } from 'react-redux';
 import QuestionIndex from './question_index';
+import { fetchUserQuestions } from '../../actions/question_actions';
 
 const mapSTP = state => ({
-    questions: Object.values(state.questions) 
+    questions: Object.values(state.questions),
+    currentUser: state.session.user
 })
 
 const mapDTP = dispatch => ({
-    //fetchQuestions --> responsible for fetching all questions  
-    //toggleActive --> responsible for toggling the active / not active status of each question 
+    fetchUserQuestions: id => dispatch(fetchUserQuestions(id))
 })
 
 export default connect(mapSTP, mapDTP)(QuestionIndex); 

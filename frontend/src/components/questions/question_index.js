@@ -6,9 +6,9 @@ export default class QuestionIndex extends Component {
         super(props)
     }
 
+    //when the component mounts, fetch all the questions of the current user and update the state 
     componentDidMount(){
-        //fetch all the questions for this user passed down from the props 
-        //this.props.fetchQuestions();
+        this.props.fetchUserQuestions(this.props.currentUser.id);
     }
 
     render() {

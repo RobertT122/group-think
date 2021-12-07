@@ -6,13 +6,13 @@ export default class QuestionIndexItem extends Component {
     }
     
     render() {
-        const { question } = this.props;
+        const { question, toggleActive } = this.props;
 
         return (
             <div className='question-index-item-container'>
                 <p className='time-stamp'>{question.createdAt}</p>
                 <p className='question-body'>{question.body}</p>
-                <button className='toggle-active-btn'>Activate/Deactivate Question</button>
+                <button onClick={toggleActive} className='toggle-active-btn'>Activate/Deactivate Question</button>
             </div>
         )
     }

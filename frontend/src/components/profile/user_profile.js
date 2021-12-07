@@ -1,6 +1,6 @@
  import React from 'react';
  
- export default function UserProfile({currentUser}) {
+ export default function UserProfile({ currentUser }) {
      return (
          <div className='user-profile-container'>
             <div className='user-image-container'></div>
