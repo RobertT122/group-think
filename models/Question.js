@@ -6,13 +6,17 @@ const QuestionSchema = new Schema ({
     type: Schema.Types.ObjectId,
     ref: 'users'
   },
-  body: {
+  text: {
     type: String,
     required: true
   },
   active: {
     type: Boolean,
     required: true
+  },
+  date: {
+    type: Date,
+    default: Date.now
   }
 
 })
