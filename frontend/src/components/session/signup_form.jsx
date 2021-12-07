@@ -7,6 +7,7 @@ class SignupForm extends React.Component {
     this.state = {
       email: '',
       username: '',
+      job: '',
       password: '',
       password2: '',
       errors: {}
@@ -36,6 +37,7 @@ class SignupForm extends React.Component {
       email: this.state.email,
       username: this.state.username,
       password: this.state.password,
+      job: this.state.job,
       password2: this.state.password2
     };
 
@@ -72,6 +74,19 @@ class SignupForm extends React.Component {
                 placeholder="Handle"
               />
             <br/>
+              <select name="Job" onChange={this.update('job')} defaultValue="">
+                <option value="">Job (optional)</option>
+                <option value="engineering">Engineering</option>
+                <option value="programmering">Programming</option>
+                <option value="health-science">Health Science</option>
+                <option value="business">Business</option>
+                <option value="construction">Construction</option>
+                <option value="food-service">Food Service</option>
+                <option value="deisgn">Design</option>
+                <option value="law">Law</option>
+                <option value="teaching">Teaching</option>
+              </select>
+            <br/>            
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
