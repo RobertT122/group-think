@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 
 const Question = require('../../models/Question');
-const validateQuestionInput = require('../../validation/questions');
+const validateQuestionInput = require('../../validation/question');
 
 // index all questions
 router.get('/', (req, res) => {
@@ -34,6 +34,21 @@ router.get('/:id', (req, res) => {
         );
 });
 
+router.patch('/:id/update', (req, res) => {
+  Question.findByIdAndUpdate(req.params.id,
+      {
+        text: req.body.text,
+        // user: req.user.id,
+        // active: true
+      }
+    )
+      .then(question => res.json(question))
+      .catch(err =>
+          res.status(404).json({ noquestionfound: 'No question found with that ID' })
+      );
+});
+
+
 // create new question
 router.post('/',
     passport.authenticate('jwt', { session: false }), (req, res) => {
@@ -45,7 +60,8 @@ router.post('/',
   
       const newQuestion = new Question({
         text: req.body.text,
-        user: req.user.id
+        user: req.user.id,
+        active: req.body.active
       });
   
       newQuestion.save().then(question => res.json(question));

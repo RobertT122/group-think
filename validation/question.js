@@ -6,6 +6,7 @@ module.exports = function validateQuestionInput(data) {
   
 
   data.text = validText(data.text) ? data.text : '';
+  data.active = true;
 
   if (!Validator.isLength(data.text, { min: 5, max: 140 })) {
     errors.text = 'Questions must be at least 5 or less than 140 characters long';
@@ -14,6 +15,10 @@ module.exports = function validateQuestionInput(data) {
   if (Validator.isEmpty(data.text)) {
     errors.text = 'Please enter a question';
   }
+
+  // if (Validator.isEmpty(data.active)) {
+  //   errors.text = 'Active status must be set';
+  // }
 
   return {
     errors,
