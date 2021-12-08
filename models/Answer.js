@@ -18,6 +18,10 @@ const AnswerSchema = new Schema ({
     type: Date,
     default: Date.now
   }
+
+  // score determination based on time
+  // call outside function of time as multiplier
+
 }, {
   timestamps: true
 

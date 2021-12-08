@@ -19,6 +19,9 @@ const QuestionSchema = new Schema ({
     default: Date.now
   }
 
+  // yes no score
+  //
+
 })
 
 module.exports = Question = mongoose.model('Question', QuestionSchema)
