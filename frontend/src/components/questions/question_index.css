@@ -1,0 +1,67 @@
+@import '../../util/reset.css';
+
+.question-index-container {
+    display: flex;
+    flex-wrap: wrap;
+    background: var(--backgroundcolor);
+    border: 1px solid white;
+    border-radius: 12px;
+    height: 800px;
+    width: 100%;
+    justify-content: center;
+    overflow-y:auto
+
+}
+
+/* question form styling */
+
+.question-form-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    font-size: 20px;
+}
+
+.question-form-input-text {
+    height: 40px;
+    width: 500px;
+    padding: 5px;
+    margin: 10px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+.question-form-submit {
+    height: 40px;
+    width: 150px;
+    padding: 5px;
+    margin: 10px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+/* question index item styling */
+
+.question-index-item-container {
+    display: flex;
+    height: 7%;
+    width: 95%;
+    margin-top: 15px;
+    background: var(--testingcolor);
+    color: white;
+    border: 1px solid var(--testingcolor);
+    border-radius: 12px;
+    box-shadow: -3px 7px 9px -1px rgb(0 0 0 / 60%);
+    padding: 12px;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+.toggle-active-btn {
+    background: var(--testingcolor);
+    border: 1px solid white;
+    border-radius: 8px;
+    color: white;
+}

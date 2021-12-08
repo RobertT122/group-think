@@ -1,14 +1,13 @@
 import { connect } from 'react-redux';
 import QuestionForm from './question_form';
-
-//need to import a question thunk action creator that would make a POST request to the backend & change state
+import { composeQuestion } from '../../actions/question_actions';
 
 const mapSTP = state => ({
-    //dont really need to map anyting from the state 
-});
+    currentUser: state.session.user
+})
 
 const mapDTP = dispatch => ({
-    createQuestion: question => dispatch(createQuestion(question))
+    composeQuestion: data => dispatch(composeQuestion(data))
 });
 
-export default connect(null, mapDTP)(QuestionForm);
+export default connect(mapSTP, mapDTP)(QuestionForm);

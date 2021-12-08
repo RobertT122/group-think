@@ -1,0 +1,9 @@
+@import url(../../util/reset.css);
+
+.right-bar-container {
+    position: absolute;
+    height: 100px;
+    width: 20%;
+    background-color: var(--backgroundcolor);
+    
+}

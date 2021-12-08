@@ -31,15 +31,15 @@ export const fetchQuestions = () => dispatch => (
 );
 
 //questions index for a particular user 
-export const fetchUserQuestions = id => dispathc => (
-    getUserQuestions()
+export const fetchUserQuestions = id => dispatch => (
+    getUserQuestions(id)
         .then(questions => dispatch(receiveUserQuestions(questions)))
         .catch(err => console.log(err))
 );
 
 //posting a question
 export const composeQuestion = data => dispatch => (
-    createQuestion()
+    createQuestion(data)
         .then(question => dispatch(receiveNewQuestion(question)))
         .catch(err => console.log(err))
 );

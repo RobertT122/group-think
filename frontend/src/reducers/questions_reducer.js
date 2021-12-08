@@ -7,7 +7,7 @@ import { RECEIVE_QUESTIONS, RECEIVE_USER_QUESTIONS, RECEIVE_NEW_QUESTION } from 
 //new corresponds to a new question just posted 
 const defaultState = { all: {}, user: {}, new: undefined }; 
 
-const QuestionsReducer = (state = defaultState, action) => {
+export default function QuestionsReducer(state = defaultState, action) {
     Object.freeze(state);
     let newState = Object.assign({}, state); 
     switch(action.type) {
@@ -17,12 +17,10 @@ const QuestionsReducer = (state = defaultState, action) => {
       case RECEIVE_USER_QUESTIONS:
         newState.user = action.questions.data;
         return newState;
-      case RECEIVE_NEW_TWEET:
+      case RECEIVE_NEW_QUESTION:
         newState.new = action.question.data
         return newState;
       default:
         return state;
     }
 }
-
-export default QuestionsReducer;

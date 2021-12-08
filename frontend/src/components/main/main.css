@@ -1,0 +1,7 @@
+@import url(../../util/reset.css);
+
+.profile-left {
+    display: flex;
+    width: 80%;
+    flex-wrap: wrap;
+}

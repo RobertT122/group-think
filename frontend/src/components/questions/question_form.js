@@ -4,14 +4,19 @@ export default class QuestionForm extends Component {
     constructor(props){
         super(props)
         this.handleSubmit = this.handleSubmit.bind(this) //becuase i use this in the handlesubmit function 
-        //whats the schema of the question lookin like? will use it to configure my state
-        this.state = {}
+        this.state = {
+            text: "",
+        }
     }
 
     handleSubmit(){
-        //most likely something like this 
-        //createQuestion will update both the state and the backend 
-        this.props.createQuestion(this.state); 
+        this.props.composeQuestion(this.state); 
+    }
+
+    update(field) {
+        return e => this.setState({
+            [field]: e.target.value
+        })
     }
 
     render() {
@@ -22,18 +27,14 @@ export default class QuestionForm extends Component {
                     <label className='question-form-label'>Ask a question
                         <input 
                             type="text" 
-                            value='Example: Should I eat donuts for dinner?'
+                            onChange={this.update('text')}
+                            value={this.state.text}
+                            placeholder='Example: Should I eat donuts for dinner?'
                             className='question-form-input-text'
                             />
                     </label>
-                    <label className='question-form-label'>Timer
-                        <input 
-                            type="number" 
-                            value='Time allocated for answers'
-                            className='question-form-input-time'
-                            />
-                    </label>
-                    <input type="submit" value='Post Question' />
+                    
+                    <input className='question-form-submit' type="submit" value='Post Question' />
                 </form>
             </div>
         )

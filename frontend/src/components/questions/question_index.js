@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import QuestionIndexItem from './question_index_item';
+import QuestionFormContainer from '../questions/question_form_container';
+
+import './question_index.css';
 
 export default class QuestionIndex extends Component {
     constructor(props){
@@ -17,8 +20,9 @@ export default class QuestionIndex extends Component {
 
         return (
             <div className='question-index-container'>
+                <QuestionFormContainer />
                 {questions.map(
-                    question => <QuestionIndexItem key={question.id} question={question} toggleActive={toggleActive} />
+                    (question, idx) => <QuestionIndexItem key={idx} question={question} toggleActive={toggleActive} />
                 )}
             </div>
         )
