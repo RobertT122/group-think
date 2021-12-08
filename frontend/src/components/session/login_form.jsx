@@ -12,6 +12,7 @@ class LoginForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this)
     this.renderErrors = this.renderErrors.bind(this);
   }
 
@@ -41,7 +42,7 @@ class LoginForm extends React.Component {
       password: this.state.password
     };
 
-    this.props.login(user); 
+    this.props.login(user)
   }
 
   // Render the session errors if there are any
@@ -55,6 +56,13 @@ class LoginForm extends React.Component {
         ))}
       </ul>
     );
+  }
+
+  demoLogin(e){
+    this.setState({
+      email: "demo@test.com",
+      password: "d3JH8569#"
+    });
   }
 
   render() {
@@ -80,8 +88,15 @@ class LoginForm extends React.Component {
                 placeholder="Password"
               />
             <br/>
+            <div className="errors">{this.renderErrors()}</div>
             <button type="submit">Submit</button>
-            {this.renderErrors()}
+            <br />
+            <button 
+              type="submit"
+              className="demo-button"
+              onClick={this.demoLogin}
+            >Demo User</button>
+            <br />
             <Link to={'/signup'}>Sign up</Link>
             <br />
           </div>
