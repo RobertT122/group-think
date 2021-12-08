@@ -7,23 +7,23 @@ const Question = require('../../models/Question');
 const validateQuestionInput = require('../../validation/question');
 
 // index all questions
-router.get('/', (req, res) => {
-    Question.find()
-        .sort({ date: -1 })
-        .then(questions => res.json(questions))
-        .catch(err => res.status(404).json({ noquestionsfound: 'No questions found' }));
-});
+// router.get('/', (req, res) => {
+//     Question.find()
+//         .sort({ date: -1 })
+//         .then(questions => res.json(questions))
+//         .catch(err => res.status(404).json({ noquestionsfound: 'No questions found' }));
+// });
 
 // user specific questions
-router.get('/user/:user_id', (req, res) => {
-    Question.find({user: req.params.user_id})
-        .sort({ date: -1 })
-        .then(questions => res.json(questions))
-        .catch(err =>
-            res.status(404).json({ noquestionsfound: 'No questions found from that user' }
-        )
-    );
-});
+// router.get('/user/:user_id', (req, res) => {
+//     Question.find({user: req.params.user_id})
+//         .sort({ date: -1 })
+//         .then(questions => res.json(questions))
+//         .catch(err =>
+//             res.status(404).json({ noquestionsfound: 'No questions found from that user' }
+//         )
+//     );
+// });
 
 // question lookup by id
 router.get('/:id', (req, res) => {
@@ -34,12 +34,24 @@ router.get('/:id', (req, res) => {
         );
 });
 
-router.patch('/:id/update', (req, res) => {
+// router.patch('/:id/update', (req, res) => {
+//   Question.findByIdAndUpdate(req.params.id,
+//       {
+//         text: req.body.text,
+//         // user: req.user.id,
+//         // active: true
+//       }
+//     )
+//       .then(question => res.json(question))
+//       .catch(err =>
+//           res.status(404).json({ noquestionfound: 'No question found with that ID' })
+//       );
+// });
+
+router.patch('/:id/deactivate', (req, res) => {
   Question.findByIdAndUpdate(req.params.id,
       {
-        text: req.body.text,
-        // user: req.user.id,
-        // active: true
+        active: false
       }
     )
       .then(question => res.json(question))
