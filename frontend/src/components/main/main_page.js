@@ -1,17 +1,20 @@
 import React from 'react';
 import UserProfileContainer from '../profile/user_profile_container';
 import QuestionIndexContainer from '../questions/question_index_container';
-import Right from '../right/right';
+import RightContainer from '../right/right_container';
 import './main.css';
 
 class MainPage extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='main-page-container'>
         <div className='profile-left'>
           <UserProfileContainer />
           <QuestionIndexContainer />
+        </div>
+        <div className='profile-right'>
+          <RightContainer />
         </div>
       </div>
     );
