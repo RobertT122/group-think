@@ -57,3 +57,7 @@ button:hover{
   color: var(--primarycolor);
   margin-bottom: 30px;
 }
+
+.demo-button{
+  font-size: 11px;
+}
