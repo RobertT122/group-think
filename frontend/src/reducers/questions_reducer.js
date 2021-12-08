@@ -1,4 +1,4 @@
-import { RECEIVE_QUESTIONS, RECEIVE_USER_QUESTIONS, RECEIVE_NEW_QUESTION } from "../actions/question_actions";
+import { RECEIVE_QUESTIONS, RECEIVE_USER_QUESTIONS, RECEIVE_NEW_QUESTION, RECEIVE_QUESTION } from "../actions/question_actions";
 
 //creating questions slice of state:
 
@@ -19,6 +19,9 @@ export default function QuestionsReducer(state = defaultState, action) {
         return newState;
       case RECEIVE_NEW_QUESTION:
         newState.new = action.question.data
+        return newState;
+      case RECEIVE_QUESTION:
+        newState[action.question.id] = action.question
         return newState;
       default:
         return state;

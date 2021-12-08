@@ -7,12 +7,12 @@ export default class QuestionIndexItem extends Component {
     }
 
     render() {
-        const { question, toggleActive } = this.props;
+        const { question, deactivate } = this.props;
 
         return (
             <div className='question-index-item-container'>
                 <p className='question-body'>{question.text}</p>
-                { question.active ? <button onClick={toggleActive} className='toggle-active-btn'>Deactivate</button> : "" }
+                { question.active ? <button onClick={() => deactivate(question.id)} className='toggle-active-btn'>Deactivate</button> : "" }
             </div>
         )
     }

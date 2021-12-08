@@ -15,4 +15,7 @@ export const createQuestion = data => {
     return axios.post('/api/questions/', data) //passing down the data to make a post request 
 }
 
-//update action for active/inactive PATCH , data 
+//PATCH request to deactivate question 
+export const deactivateQuestion = id => {
+    return axios.patch(`/api/questions/${id}/deactivate`)
+}
