@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;300;500&family=Montserrat:wght@100;200;300;400&family=Outfit:wght@100;200;300&family=Roboto:wght@300&display=swap');
+
+.user-profile-container {
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+}
+
+.user-details-container {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    box-shadow: -3px 7px 9px -1px rgba(0,0,0,0.6);
+    font-family: 'roboto', sans-serif;
+    font-weight: 300;
+}
+
+.occupation {
+    font-size: 10px;
+}
+
+.group-think-score-container {
+    display: flex;
+    justify-content: center;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    box-shadow: -3px 7px 9px -1px rgba(0,0,0,0.6);
+    font-family: 'roboto', sans-serif;
+    font-weight: 300;
+}

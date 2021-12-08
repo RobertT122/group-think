@@ -9,7 +9,7 @@ const defaultState = { all: {}, user: {}, new: undefined };
 
 const QuestionsReducer = (state = defaultState, action) => {
     Object.freeze(state);
-    let newState = Object.assign({}, state); //making a copy of state
+    let newState = Object.assign({}, state); 
     switch(action.type) {
       case RECEIVE_QUESTIONS:
         newState.all = action.questions.data;

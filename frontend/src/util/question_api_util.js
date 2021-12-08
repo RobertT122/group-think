@@ -14,3 +14,5 @@ export const getUserQuestions = id => {
 export const createQuestion = data => {
     return axios.post('/api/questions/', data) //passing down the data to make a post request 
 }
+
+//update action for active/inactive PATCH , data 
