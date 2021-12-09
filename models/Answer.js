@@ -3,24 +3,25 @@ const Schema = mongoose.Schema;
 
 const AnswerSchema = new Schema ({
   user: {
-    type: Schema.Types.ObjectId,
-    ref: 'users'
+    type: new Schema({id: Schema.Types.ObjectId, job: String}),
+    required: true
   },
   question: {
-    type: Schema.Types.ObjectId,
-    ref: 'questions'
-  },
-  text: {
-    type: String,
+    type: new Schema({id: Schema.Types.ObjectId, text: String}),
     required: true
+    // only text and later category
+  },
+  input: {
+    type: Boolean
   },
   date: {
     type: Date,
     default: Date.now
   }
 
-  // score determination based on time
-  // call outside function of time as multiplier
+  // score/weight determination based on time
+  // default 0 presence req
+  // 
 
 }, {
   timestamps: true

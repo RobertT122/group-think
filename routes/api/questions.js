@@ -15,8 +15,11 @@ router.get('/', (req, res) => {
 });
 
 // user specific questions
-router.get('/user/:user_id', (req, res) => {
-    Question.find({user: req.params.user_id})
+router.get('/users/:user_id', passport.authenticate('jwt', { session: false }), (req, res) => {
+    
+  console.log(req.user)
+
+    Question.find({user: req.user})
         .sort({ date: -1 })
         .then(questions => res.json(questions))
         .catch(err =>
@@ -26,7 +29,8 @@ router.get('/user/:user_id', (req, res) => {
 });
 
 // question lookup by id
-router.get('/:id', (req, res) => {
+router.get('/:id', passport.authenticate('jwt', { session: false }), (req, res) => {
+
     Question.findById(req.params.id)
         .then(question => res.json(question))
         .catch(err =>
@@ -57,10 +61,10 @@ router.post('/',
       if (!isValid) {
         return res.status(400).json(errors);
       }
-  
+      console.log(req.user)
       const newQuestion = new Question({
         text: req.body.text,
-        user: req.user.id,
+        user: req.user,
         active: req.body.active
       });
   
