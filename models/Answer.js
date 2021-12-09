@@ -17,11 +17,11 @@ const AnswerSchema = new Schema ({
   date: {
     type: Date,
     default: Date.now
+  },
+  weight: {
+    type: Number,
+    default: 0
   }
-
-  // score/weight determination based on time
-  // default 0 presence req
-  // 
 
 }, {
   timestamps: true

@@ -29,6 +29,7 @@ router.get('/question/:question_id', (req, res) => {
     );
 });
 
+
 router.post('/',
     passport.authenticate('jwt', { session: false }), (req, res) => {
 
@@ -39,7 +40,8 @@ router.post('/',
           const newAnswer = new Answer({
             input: req.body.input,
             user: req.user,
-            question
+            question,
+            weight: req.body.weight
           })
       
           newAnswer.save().then(answer => res.json(answer))
