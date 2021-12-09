@@ -5,7 +5,7 @@
     flex-wrap: wrap;
     background: var(--backgroundcolor);
     box-shadow: -3px 7px 9px -1px rgb(0 0 0 / 60%);
-    border: 1px solid white;
+    border: 1px solid lightgray;
     border-radius: 12px;
     height: 800px;
     width: 100%;
@@ -39,8 +39,11 @@
     width: 150px;
     padding: 5px;
     margin: 10px;
-    border: 1px solid lightgray;
+    border: 1px solid var(--testingcolor);
     border-radius: 5px;
+    background: var(--testingcolor);
+    color: white;
+    box-shadow: -3px 7px 9px -1px rgb(0 0 0 / 60%);
 }
 
 /* question index item styling */
@@ -62,7 +65,8 @@
 
 .toggle-active-btn {
     background: var(--testingcolor);
-    border: 1px solid white;
+    border: 1px solid lightgray);
     border-radius: 8px;
     color: white;
+    box-shadow: -3px 7px 9px -1px rgb(0 0 0 / 60%);
 }

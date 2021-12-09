@@ -1,16 +1,27 @@
 import React, { Component } from 'react';
+import { withRouter } from "react-router";
 
-export default class QuestionForm extends Component {
+class QuestionForm extends Component {
     constructor(props){
         super(props)
-        this.handleSubmit = this.handleSubmit.bind(this) //becuase i use this in the handlesubmit function 
         this.state = {
             text: "",
+
         }
+
+        this.refreshPage = this.refreshPage.bind(this); 
+        this.handleSubmit = this.handleSubmit.bind(this); //becuase i use this in the handlesubmit function 
     }
 
-    handleSubmit(){
-        this.props.composeQuestion(this.state); 
+    refreshPage(){
+        //should rerender the question index--
+        window.location.reload(false);
+    }
+
+    handleSubmit(e){
+        e.preventDefault();
+        this.props.composeQuestion(this.state)
+        this.refreshPage();
     }
 
     update(field) {
@@ -40,3 +51,5 @@ export default class QuestionForm extends Component {
         )
     }
 }
+
+export default withRouter(QuestionForm);
