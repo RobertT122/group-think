@@ -3,8 +3,10 @@ const Schema = mongoose.Schema;
 
 const QuestionSchema = new Schema ({
   user: {
-    type: Schema.Types.ObjectId,
-    ref: 'users'
+    type: new Schema({id: Schema.Types.ObjectId, username: String}),
+    required: true
+    // type: Schema.Types.ObjectId,
+    // ref: 'User'
   },
   text: {
     type: String,
@@ -17,7 +19,9 @@ const QuestionSchema = new Schema ({
   date: {
     type: Date,
     default: Date.now
-  }
+  },
+  
+  // later category
 
 })
 

@@ -18,6 +18,8 @@ const UserSchema = new Schema ({
     type: String,
     required: true
   }
+
+  // groupThink score
 }, {
   timestamps: true
 })
