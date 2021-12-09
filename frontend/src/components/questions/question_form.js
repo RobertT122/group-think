@@ -15,13 +15,13 @@ class QuestionForm extends Component {
 
     refreshPage(){
         //should rerender the question index--
-        window.location.reload(false);
+        // window.location.reload(false);
     }
 
     handleSubmit(e){
         e.preventDefault();
         this.props.composeQuestion(this.state)
-        this.refreshPage();
+        // this.refreshPage();
     }
 
     update(field) {

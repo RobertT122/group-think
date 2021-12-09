@@ -1,4 +1,5 @@
 import { connect } from 'react-redux'; 
+import Answering from './answering';
 
 const mapSTP = state => ({
     questions: state.questions.all
@@ -11,5 +12,6 @@ const mapDTP = dispatch => ({
     //modal types can correspond to different kinds of modals popping up 
     //exit: () => dispatch(exit()) 
 
-
 })
+
+export default connect(mapSTP, mapDTP)(Answering); 
