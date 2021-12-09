@@ -7,7 +7,7 @@ const Answer = require('../../models/Answer');
 
 
 // user specific answers
-router.get('/users/:user_id', passport.authenticate('jwt', { session: false }), (req, res) => {
+router.get('/user/:user_id', passport.authenticate('jwt', { session: false }), (req, res) => {
     Answer.find({user: req.params.user_id})
         .sort({ date: -1 })
         .then(answers => res.json(answers))
@@ -35,7 +35,7 @@ router.post('/',
       const newAnswer = new Answer({
         input: req.body.input,
         user: req.user,
-        question: req.question
+        question: req.body.question
         // question either needs to be .question or .body.question determine from form
       });
   

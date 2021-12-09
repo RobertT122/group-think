@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 });
 
 // user specific questions
-router.get('/users/:user_id', passport.authenticate('jwt', { session: false }), (req, res) => {
+router.get('/user/:user_id', passport.authenticate('jwt', { session: false }), (req, res) => {
     
   console.log(req.user)
 
