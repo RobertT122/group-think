@@ -4,7 +4,7 @@ import { fetchUserAnswers } from '../../actions/answers_actions';
 import { openModal } from '../../actions/modal_actions';
 
 const mSTP = state => ({
-    answers: state.answers.user,
+    answers: Object.values(state.answers.user),
     currentUser: state.session.user
 });
 
