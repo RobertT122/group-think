@@ -36,7 +36,6 @@ router.post('/',
       let id = mongoose.Types.ObjectId(req.body.question_id)
         Question.findById(id)
         .then(question => {
-          console.log(question)
           const newAnswer = new Answer({
             input: req.body.input,
             user: req.user,
