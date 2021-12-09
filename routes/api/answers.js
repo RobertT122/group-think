@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 
 const Answer = require('../../models/Answer');
+const Question = require('../../models/Question');
 
 
 // user specific answers
@@ -28,18 +29,21 @@ router.get('/question/:question_id', (req, res) => {
     );
 });
 
-// create new answer
 router.post('/',
     passport.authenticate('jwt', { session: false }), (req, res) => {
-  
-      const newAnswer = new Answer({
-        input: req.body.input,
-        user: req.user,
-        question: req.body.question
-        // question either needs to be .question or .body.question determine from form
-      });
-  
-      newAnswer.save().then(answer => res.json(answer));
+
+      let id = mongoose.Types.ObjectId(req.body.question_id)
+        Question.findById(id)
+        .then(question => {
+          console.log(question)
+          const newAnswer = new Answer({
+            input: req.body.input,
+            user: req.user,
+            question
+          })
+      
+          newAnswer.save().then(answer => res.json(answer))
+        })
     }
   );
 
