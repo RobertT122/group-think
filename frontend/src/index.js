@@ -41,7 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   // Render our root component and pass in the store as a prop
   const root = document.getElementById('root');
-  window.composeAnswer = (answer) => store.dispatch(composeAnswer(answer))
 
   ReactDOM.render(<Root store={store} />, root);
 });
