@@ -1,4 +1,4 @@
-//imports 
+import { getUserAnswers, getQuestionAnswers, createAnswer } from "../util/answer_api_util";
 
 export const RECEIVE_QUESTION_ANSWERS = 'RECEIVE_QUESTION_ANSWERS'; 
 export const RECEIVE_USER_ANSWERS = 'RECEIVE_USER_ANSWERS';
@@ -38,8 +38,8 @@ export const fetchUserAnswers = id => dispatch => (
         .catch(err => console.log(err))
 )
 
-export const fetchQuestionAnswers = questionId => dispatch => (
-    getQuestionAnswers(questionId)
+export const fetchQuestionAnswers = id => dispatch => (
+    getQuestionAnswers(id)
         .then(answers => dispatch(receiveQuestionAnswers(answers)))
         .catch(err => console.log(err))
 )

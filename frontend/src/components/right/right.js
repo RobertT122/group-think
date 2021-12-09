@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-//will need to make new react index item component for the right side specifically and map over it
-import RightIndexItem from './right_index_item';
+import AnswerIndexContainer from '../answers/answer_index_container';
 import './right.css';
 
 export default class Right extends Component {
@@ -18,9 +17,7 @@ export default class Right extends Component {
                 <div className='ans-questions-container'>
                     <button className='ans-questions-btn'>Answer Questions</button>
                 </div>
-                <div className='past-res-container'>
-                    {}
-                </div>
+                <AnswerIndexContainer />
             </div>
         )
     }
