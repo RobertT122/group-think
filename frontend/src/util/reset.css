@@ -68,6 +68,7 @@ select {
   --green: #0EA11D;
   --red: #E83D07; 
   --bordercolor: #B8B8B8;
+  --testingcolor: lightslategray;
 }
 
 body{

@@ -15,15 +15,15 @@ const validateQuestionInput = require('../../validation/question');
 // });
 
 // user specific questions
-// router.get('/user/:user_id', (req, res) => {
-//     Question.find({user: req.params.user_id})
-//         .sort({ date: -1 })
-//         .then(questions => res.json(questions))
-//         .catch(err =>
-//             res.status(404).json({ noquestionsfound: 'No questions found from that user' }
-//         )
-//     );
-// });
+router.get('/user/:user_id', (req, res) => {
+    Question.find({user: req.params.user_id})
+        .sort({ date: -1 })
+        .then(questions => res.json(questions))
+        .catch(err =>
+            res.status(404).json({ noquestionsfound: 'No questions found from that user' }
+        )
+    );
+});
 
 // question lookup by id
 router.get('/:id', (req, res) => {
