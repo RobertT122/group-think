@@ -1,0 +1,39 @@
+import React, { Component } from 'react'
+
+export default class Done extends Component {
+    constructor(props) {
+        super(props)
+    }
+
+    componentDidMount() {
+        //submitAnswer()
+    }
+
+    result(){
+        if (this.props.answer.input) {
+            return <h2>Yes</h2>
+        } else if (this.props.answer.input === false) {
+            return <h2>No</h2>
+        } else {
+            return <h2>Time's Up</h2>
+        }
+    }
+
+    render() {
+        const { question, answer } = this.props;
+
+        return (
+            <div className='done-container'>
+                <div className='question-text-container'>
+                    <p>{question.text}</p>
+                </div>
+                <div className='result-container'>
+                    <p>{this.result()}</p>
+                </div>
+                <div className='next-container'>
+                    <button className='next-question'>Next Question</button>
+                </div>
+            </div>
+        )
+    }
+}
