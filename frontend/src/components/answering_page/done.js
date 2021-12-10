@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 export default class Done extends Component {
     constructor(props) {
@@ -33,6 +34,9 @@ export default class Done extends Component {
                 </div>
                 <div className='next-container'>
                     <button className='next-question' onClick={()=>window.location.reload(false)}>Next Question</button>
+                </div>
+                <div className="go-home">
+                    <Link to="/">Home</Link>
                 </div>
             </div>
         )
