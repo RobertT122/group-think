@@ -11,7 +11,7 @@ export default class AnswerIndex extends Component {
     }
 
     componentDidUpdate() {
-        this.props.fetchUserAnswers(this.props.currentUser.id)
+        // this.props.fetchUserAnswers(this.props.currentUser.id)
     }
 
     render() {

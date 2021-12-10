@@ -15,8 +15,7 @@ export default class QuestionIndex extends Component {
     }
 
     componentDidUpdate(){
-        //
-        this.props.fetchUserQuestions(this.props.currentUser.id);
+        // this.props.fetchUserQuestions(this.props.currentUser.id);
     }
 
     render() {
