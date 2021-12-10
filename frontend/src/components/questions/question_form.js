@@ -16,6 +16,7 @@ class QuestionForm extends Component {
         e.preventDefault();
         this.props.composeQuestion(this.state);
         this.props.fetchUserQuestions(this.props.currentUser._id);
+        this.setState({text: ""})
     }
 
     update(field) {
