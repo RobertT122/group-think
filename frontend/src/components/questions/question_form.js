@@ -9,19 +9,13 @@ class QuestionForm extends Component {
 
         }
 
-        this.refreshPage = this.refreshPage.bind(this); 
         this.handleSubmit = this.handleSubmit.bind(this); //becuase i use this in the handlesubmit function 
-    }
-
-    refreshPage(){
-        //should rerender the question index--
-        // window.location.reload(false);
     }
 
     handleSubmit(e){
         e.preventDefault();
-        this.props.composeQuestion(this.state)
-        // this.refreshPage();
+        this.props.composeQuestion(this.state);
+        this.props.fetchUserQuestions(this.props.currentUser._id);
     }
 
     update(field) {

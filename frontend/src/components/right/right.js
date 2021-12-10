@@ -17,7 +17,7 @@ export default class Right extends Component {
                 <div className='ans-questions-container'>
                     <button className='ans-questions-btn'>Answer Questions</button>
                 </div>
-                <AnswerIndexContainer />
+                
             </div>
         )
     }

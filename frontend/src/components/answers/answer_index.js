@@ -10,10 +10,6 @@ export default class AnswerIndex extends Component {
         this.props.fetchUserAnswers(this.props.currentUser.id)
     }
 
-    componentDidUpdate() {
-        this.props.fetchUserAnswers(this.props.currentUser.id)
-    }
-
     render() {
         const { answers, openModal } = this.props;
         return (

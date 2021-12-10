@@ -48,9 +48,26 @@
 
 /* question index item styling */
 
-.question-index-item-container {
+
+
+.question-index-item-container-active {
     display: flex;
     height: 7%;
+    width: 95%;
+    margin-top: 15px;
+    background: var(--testingcolor);
+    color: white;
+    border: 1px solid var(--testingcolor);
+    border-radius: 12px;
+    box-shadow: -3px 7px 9px -1px rgb(0 0 0 / 60%);
+    padding: 12px;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+.question-index-item-container-inactive {
+    display: flex;
+    height: 14%;
     width: 95%;
     margin-top: 15px;
     background: var(--testingcolor);
@@ -70,3 +87,7 @@
     color: white;
     box-shadow: -3px 7px 9px -1px rgb(0 0 0 / 60%);
 }
+
+/* question index item extended styling */
+
+
