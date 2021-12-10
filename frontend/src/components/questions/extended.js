@@ -38,8 +38,8 @@ export default class Extended extends Component {
        
         return (
             <div className='extended-container'>
-                <p className='yes'>{this.countYes()} Yeses</p>
-                <p className='no'>{this.countNo()} Noes</p>
+                <p className='yeses'>{this.countYes()} Yeses</p>
+                <p className='noes'>{this.countNo()} Noes</p>
             </div>
         )
     }

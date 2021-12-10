@@ -8,7 +8,7 @@ export default class Loading extends Component {
     render() {
         return (
             <div className='loading-container'>    
-                <p>Give us a moment to fetch the question</p>    
+                <p className='text'>Give us a moment to fetch the question</p>    
             </div>
         )
     }

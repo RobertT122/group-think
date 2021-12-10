@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './answering_page.css'
 
 export default class Answering extends Component {
     constructor(props){
@@ -25,7 +26,7 @@ export default class Answering extends Component {
                         className='no'>No</button>    
                 </div>
                 <div className='time'>
-                    <p>{time}</p>
+                    <p className='timer'>{Math.floor(time/10)}</p>
                 </div>
             </div>
         )

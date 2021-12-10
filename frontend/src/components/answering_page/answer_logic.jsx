@@ -73,9 +73,8 @@ const AnswerLogic = (props) => {
 
   return(
     <div>
-      <h2
-        // style={colorFrame(state.frame)}
-      >{state.time/10} : {state.frame}</h2>
+
+      <h2 className='timer'>{state.time/10} : {state.frame}</h2>
       {frameComponent()}
 
       {/* {(state.done)? <button onClick={resetTimer}>reset</button>: <></>} */}

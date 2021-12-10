@@ -1,0 +1,189 @@
+@import url(../../util/reset.css);
+
+body {
+    height: 100%;
+    width: 100%;
+}
+
+.timer-container {
+    height: 10%;
+}
+
+.answering-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.reading-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.done-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.question-text-container {
+    height: 30%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'roboto', sans-serif;
+    font-weight: 300;
+    margin-bottom: 25px;
+}
+.loading-container {
+    height: 30%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'roboto', sans-serif;
+    font-weight: 300;
+    margin-bottom: 25px;
+}
+
+.user-container {
+    height: 30%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'roboto', sans-serif;
+    font-weight: 300;
+    margin-bottom: 25px;
+}
+
+.result-container {
+    height: 30%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'roboto', sans-serif;
+    font-weight: 300;
+    margin-bottom: 25px;
+}
+
+.next-container {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'roboto', sans-serif;
+    font-weight: 300;
+    margin-bottom: 25px;
+}
+
+.go-home {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'roboto', sans-serif;
+    font-weight: 300;
+    margin-bottom: 25px;
+}
+
+.next-question {
+    border: 1px solid var(--testingcolor);
+    border-radius: 10px;
+    background-color: var(--testingcolor);
+    color: white;
+    width: 300px;
+    height: 150px;
+    font-family: 'roboto', sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.go-home a {
+    margin-left: 12%;
+    color: white;
+    width: 300px;
+    height: 150px;
+    font-family: 'roboto', sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+
+.text {
+    font-family: 'roboto', sans-serif;
+    font-weight: 300;
+    font-size: 30px;
+}
+
+.user-text {
+    font-family: 'roboto', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.user-image {
+    height: 150px;
+    width: 150px;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+.button-container {
+    height: 30%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: 'roboto', sans-serif;
+    font-weight: 300;
+}
+
+.yes {
+    border: 1px solid var(--testingcolor);
+    border-radius: 10px;
+    background-color: var(--testingcolor);
+    color: white;
+    width: 300px;
+    height: 150px;
+    font-family: 'roboto', sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.no {
+    border: 1px solid var(--testingcolor);
+    border-radius: 10px;
+    background-color: var(--testingcolor);
+    color: white;
+    width: 300px;
+    height: 150px;
+    font-family: 'roboto', sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.time {
+    height: 30%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'roboto', sans-serif;
+    font-weight: 300;
+}
+
+.timer {
+    font-family: 'roboto', sans-serif;
+    font-weight: 300;
+    font-size: 30px;
+}

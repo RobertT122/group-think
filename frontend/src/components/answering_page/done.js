@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import './answering_page.css'
 
 export default class Done extends Component {
     constructor(props) {
@@ -13,11 +14,11 @@ export default class Done extends Component {
 
     result(){
         if (this.props.answer.input) {
-            return <h2>Yes</h2>
+            return <h2 className='result'>Yes</h2>
         } else if (this.props.answer.input === false) {
-            return <h2>No</h2>
+            return <h2 className='result'>No</h2>
         } else {
-            return <h2>Time's Up</h2>
+            return <h2 className='result'>Time's Up</h2>
         }
     }
 
@@ -27,10 +28,10 @@ export default class Done extends Component {
         return (
             <div className='done-container'>
                 <div className='question-text-container'>
-                    <p>{question.text}</p>
+                    <p className='text'>{question.text}</p>
                 </div>
                 <div className='result-container'>
-                {this.result()}
+                    {this.result()}
                 </div>
                 <div className='next-container'>
                     <button className='next-question' onClick={()=>window.location.reload(false)}>Next Question</button>
