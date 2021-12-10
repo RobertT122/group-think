@@ -14,20 +14,17 @@ router.get('/next', passport.authenticate('jwt', { session: false }), (req, res)
 
 
   Answer.find({user: req.user})
-        .then(answer => {
-          Question.find({_id: {$nin: [answer.question_id]}, user: { $nin: [req.user]}, active: true})
-        .sort({ date: -1 }).limit(1)
-        .then(questions => res.json(questions))
-        .catch(err =>
-            res.status(404).json({ noquestionsfound: 'No questions found' }
-        )
+    .then(answer => {
+      Question.find({_id: {$nin: [answer.question_id]}, user: { $nin: [req.user]}, active: true})
+    .sort({ date: -1 }).limit(1)
+    .then(questions => res.json(questions))
+    .catch(err => 
+        res.status(404).json({ noquestionsfound: 'No questions found' })
     );
-        })
-        .catch(err =>
-            res.status(404).json({ noquestionsfound: 'No questions found from that user' }
-        )
+    })
+    .catch(err => 
+      res.status(404).json({ noquestionsfound: 'No questions found from that user' })
     );
-
 });
 
 

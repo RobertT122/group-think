@@ -19,3 +19,8 @@ export const createQuestion = data => {
 export const deactivateQuestion = id => {
     return axios.patch(`/api/questions/${id}/deactivate`)
 }
+
+// grab next question
+export const nextQuestion = () => {
+    return axios.get(`/api/questions/next`)
+}

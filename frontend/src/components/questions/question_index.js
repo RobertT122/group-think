@@ -13,6 +13,10 @@ export default class QuestionIndex extends Component {
         this.props.fetchUserQuestions(this.props.currentUser.id);
     }
 
+    componentDidUpdate(){
+        // this.props.fetchUserQuestions(this.props.currentUser.id);
+    }
+
     render() {
         //need to iterate through the questions array and map out new arr of questions index items 
         const { questions, deactivate, fetchUserQuestions, currentUser } = this.props; //array of question objects & the function to toggle the status of the question index item
