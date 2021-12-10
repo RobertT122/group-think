@@ -5,15 +5,18 @@ import Loading from "./loading"
 import ReadingContainer from './reading_container'
 import AnsweringContainer from './answering_container'
 import DoneContainer from "./done_container"
+import { connect } from "react-redux"
 
 const AnswerLogic = (props) => {
   const initialState={time: 0, frame: 0}
   const [state, setState] = useState(initialState)
   const [timerReady, setTimerReady] = useState(false)
   const [answer, setAnswer] = useState({question_id: null, weight: 0})
+  const [question, setQuestion]= useState({})
 
   //fetches question and starts timer
   useEffect(() => {
+
     console.log("fetching question")
     setTimeout(()=>{        
       startTimer()
@@ -51,17 +54,24 @@ const AnswerLogic = (props) => {
     }
   }, [timerReady]);
   
-  const earlyStop = ()=>setState({time:0, frame: 3})
-  const setInput = (bool) => setAnswer((prev) => Object.assign({}, prev, {input: bool, weight: state.time}))
+  const setInput = (bool) => {
+    setState({time:0, frame: 3})
+    setAnswer((prev) => Object.assign({}, prev, {input: bool, weight: state.time}))
+  }
 
   const frameComponent = () => {
     switch(state.frame){
       case 1:
-        return <ReadingContainer time={state.time} />
+        // return <ReadingContainer time={state.time} />
+        return <h2>Reading</h2>
       case 2:
-        return <AnsweringContainer time={state.time} earlyStop={earlyStop} setInput={setInput} /> //yes
+        // return <AnsweringContainer time={state.time}  setInput={setInput} /> //yes
+        return <h2>Answering</h2>
       case 3:
-        return <DoneContainer />
+        //On componenet did mount set the submit the answer
+        //Will need to add the dispatch for the answer
+        // return <DoneContainer answer={answer}/>
+        return <h3>Done!</h3>
       default:
         return <Loading />
     }
@@ -81,7 +91,16 @@ const AnswerLogic = (props) => {
   //which will cause the page to change what it is rendering
 }
 
-export default AnswerLogic
+
+const mapSTP = (state) => ({
+
+})
+
+const mapDTP = dispatch => ({
+  
+})
+
+export default connect(mapSTP, mapDTP)(AnswerLogic)
 
 
 

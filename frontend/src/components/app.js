@@ -7,6 +7,7 @@ import MainPage from './main/main_page';
 import QuestionIndexContainer from './questions/question_index_container';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
+import AnswerLogic from './answering_page/answer_logic';
 
 const App = () => (
   <div>
@@ -14,6 +15,7 @@ const App = () => (
     <Switch>
         <ProtectedRoute exact path='/index' component={QuestionIndexContainer} />
         <ProtectedRoute exact path="/" component={MainPage} />
+        <ProtectedRoute exact path="/answers" component={AnswerLogic}/>
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
     </Switch>
