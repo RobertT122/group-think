@@ -1,6 +1,10 @@
 import React, { Component } from "react"
 import { useState } from "react"
 import { useEffect } from "react"
+import Loading from "./loading"
+import ReadingContainer from './reading_container'
+import AnsweringContainer from './answering_container'
+import DoneContainer from "./done_container"
 
 const AnswerLogic = (props) => {
   const initialState={time: 0, frame: 0}
@@ -50,21 +54,16 @@ const AnswerLogic = (props) => {
   const earlyStop = ()=>setState({time:0, frame: 3})
   const setInput = (bool) => setAnswer((prev) => Object.assign({}, prev, {input: bool, weight: state.time}))
 
-  //setInput(true)
-
   const frameComponent = () => {
     switch(state.frame){
       case 1:
-        return <h1>Reading a Question</h1>
+        return <ReadingContainer time={state.time} />
       case 2:
-        return <button onClick={()=> {
-          setInput(true)
-          earlyStop()
-        }}>Answer</button> //yes
+        return <AnsweringContainer time={state.time} earlyStop={earlyStop} setInput={setInput} /> //yes
       case 3:
-        return <h2>done!</h2>
+        return <DoneContainer />
       default:
-        return <h1>loading..</h1>
+        return <Loading />
     }
   }
 
