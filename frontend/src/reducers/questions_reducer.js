@@ -5,7 +5,7 @@ import { RECEIVE_QUESTIONS, RECEIVE_USER_QUESTIONS, RECEIVE_NEW_QUESTION, RECEIV
 //all corresponds to all the questions that're active on our database => answering questions functionality
 //user corresponds to a particular users questions 
 //new corresponds to a new question just posted 
-const defaultState = { all: {}, user: {}, new: undefined, next: undefined }; 
+const defaultState = { all: {}, user: {}, new: undefined, next: [{}] }; 
 
 export default function QuestionsReducer(state = defaultState, action) {
     Object.freeze(state);

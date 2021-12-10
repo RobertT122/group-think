@@ -1,14 +1,15 @@
 import { connect }  from 'react-redux';
+import { postAnswer } from '../../actions/answers_actions';
 import Done from './done';
 
 const mSTP = state => ({
     //need to pass down a specific question
     //and then will access input of the question (true, false, null) --> yes no 
-    question: state.questions.all[0]
 })
 
-const mDTP = dispatch => ({
+const mDTP = (dispatch, ownProps) => ({
     //need to fetch the recently answered question in queue
+    submitAnswer: (answer) => dispatch(postAnswer(answer))
 })
 
 export default connect(mSTP, mDTP)(Done); 

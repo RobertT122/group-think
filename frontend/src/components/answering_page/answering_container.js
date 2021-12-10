@@ -3,7 +3,6 @@ import Answering from './answering';
 
 const mSTP = state => ({
     //need to pass down a specific question
-    question: state.questions.all[0]
 })
 
 const mDTP = dispatch => ({

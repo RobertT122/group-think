@@ -5,7 +5,6 @@ const mSTP = state => ({
     //need to pass down a specific question
     //and then will access the person who wrote the question
     //access the question text 
-    question: state.questions.all[0]
 })
 
 const mDTP = dispatch => ({

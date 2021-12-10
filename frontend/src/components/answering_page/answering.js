@@ -6,24 +6,22 @@ export default class Answering extends Component {
     }
 
     render() {
-        const { setInput, earlyStop, time } = this.props;
+        const { setInput, earlyStop, time, question } = this.props;
         return (
             <div className='answering-container'>
                 <div className='question-text-container'>
-                    <p className='text'>Does sea urchin taste good?</p>
+                    <p className='text'>{question.text}</p>
                 </div>
                 <div className='button-container'>
                     <button 
                         onClick={()=> { 
                             setInput(true)
-                            earlyStop()}
-                        } 
+                        }} 
                         className='yes'>Yes</button>    
                     <button 
                         onClick={()=> { 
                             setInput(false)
-                            earlyStop()}
-                        } 
+                        }} 
                         className='no'>No</button>    
                 </div>
                 <div className='time'>

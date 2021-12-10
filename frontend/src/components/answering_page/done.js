@@ -6,7 +6,8 @@ export default class Done extends Component {
     }
 
     componentDidMount() {
-        //submitAnswer()
+        console.log("mounting")
+        this.props.submitAnswer(this.props.answer)
     }
 
     result(){
@@ -28,10 +29,10 @@ export default class Done extends Component {
                     <p>{question.text}</p>
                 </div>
                 <div className='result-container'>
-                    <p>{this.result()}</p>
+                {this.result()}
                 </div>
                 <div className='next-container'>
-                    <button className='next-question'>Next Question</button>
+                    <button className='next-question' onClick={()=>window.location.reload(false)}>Next Question</button>
                 </div>
             </div>
         )
