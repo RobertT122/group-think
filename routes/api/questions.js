@@ -11,11 +11,16 @@ const validateQuestionInput = require('../../validation/question');
 
 
 router.get('/next', passport.authenticate('jwt', { session: false }), (req, res) => {
-
-
+  console.log("searching")
+  console.log(req.user._id)
+  //correctly grabs the answers that user has gotten
   Answer.find({user: req.user})
-    .then(answer => {
-      Question.find({_id: {$nin: [answer.question_id]}, user: { $nin: [req.user]}, active: true})
+    .then(answers => {
+      let answersQuestions = answers.map(answer => (
+        answer.question._id
+      ))
+      Question.find({_id: {$nin: answersQuestions}, user: { $nin: [req.user]}, active: true})
+      //answer.question_id comes back undefined
     .sort({ date: -1 }).limit(1)
     .then(questions => res.json(questions))
     .catch(err => 

@@ -21,6 +21,7 @@ router.get('/user/:user_id', passport.authenticate('jwt', { session: false }), (
 // by question
 router.get('/question/:question_id', (req, res) => {
     Answer.find({user: req.params.question_id})
+    //unsure why we are comparing the user key to the question_id
         .sort({ date: -1 })
         .then(answers => res.json(answers))
         .catch(err =>
