@@ -35,7 +35,6 @@ export default class Extended extends Component {
 
 
     render() {
-       
         return (
             <div className='extended-container'>
                 <p className='yeses'>{this.countYes()} Yeses</p>

@@ -50,7 +50,7 @@ class LoginForm extends React.Component {
     return(
       <ul>
         {Object.keys(this.state.errors).map((error, i) => (
-          <li key={`error-${i}`}>
+          <li className='error-txt' key={`error-${i}`}>
             {this.state.errors[error]}
           </li>
         ))}
@@ -67,40 +67,45 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div className="session-form-container">
-        <form onSubmit={this.handleSubmit}>
-          <div className="session-form">
-            <h1>
-                <span className="italics">group</span>
-                <span className="bold">Think</span>
-            </h1>
-            <h2>Log in</h2>
-            <br/>
-              <input type="text"
-                value={this.state.email}
-                onChange={this.update('email')}
-                placeholder="Email"
-              />
-            <br/>
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                placeholder="Password"
-              />
-            <br/>
-            <div className="errors">{this.renderErrors()}</div>
-            <button type="submit">Submit</button>
-            <br />
-            <button 
-              type="submit"
-              className="demo-button"
-              onClick={this.demoLogin}
-            >Demo User</button>
-            <br />
-            <Link to={'/signup'}>Sign up</Link>
-            <br />
-          </div>
-        </form>
+      <div className='signin-page-container'>
+        <img className='signin-background' src="https://wallpaperaccess.com/full/4982.jpg" alt="" />
+        <div className="session-form-container">
+          <form onSubmit={this.handleSubmit}>
+            <div className="session-form">
+              <h1>
+                  <p className='form-header'>GroupThink</p>
+              </h1>
+              <br/>
+                <input 
+                  className='session-input'
+                  type="text"
+                  value={this.state.email}
+                  onChange={this.update('email')}
+                  placeholder="Email"
+                />
+              <br/>
+                <input 
+                  className='session-input'
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.update('password')}
+                  placeholder="Password"
+                />
+              <br/>
+              <div className="errors">{this.renderErrors()}</div>
+              <button className='submit-btn' type="submit">Continue</button>
+              <br />
+              <button 
+                type="submit"
+                className="demo-button"
+                onClick={this.demoLogin}
+              >Demo User</button>
+              <br />
+              <Link className='link-to-signup' to={'/signup'}>Sign Up</Link>
+              <br />
+            </div>
+          </form>
+        </div>
       </div>
     );
   }

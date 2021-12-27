@@ -30,7 +30,6 @@ class NavBar extends React.Component {
       return (
         <div>
             <div className='logo-container'>
-              <h1>GroupThink</h1>
             </div>
             { this.getLinks() }
         </div>
