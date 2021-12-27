@@ -16,13 +16,27 @@ const QuestionSchema = new Schema ({
     type: Boolean,
     required: true
   },
+  yes: {
+    type: Number,
+    default: 0
+  },
+  no: {
+    type: Number,
+    default: 0,
+  },
+  majority: {
+    type: Boolean,
+    required: false
+  },
+  total: {
+    type: Number,
+    default: 0,
+  },
   date: {
     type: Date,
     default: Date.now
-  },
+  }
   
-  // later category
-
 })
 
 module.exports = Question = mongoose.model('Question', QuestionSchema)
