@@ -60,58 +60,63 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div className="session-form-container">
-        <form onSubmit={this.handleSubmit}>
-          <div className="session-form">
-            <h1>
-              <span className="italics">group</span>
-              <span className="bold">Think</span>
-            </h1>
-            <h2>Sign up</h2>
-            <br/>
-              <input type="text"
-                value={this.state.email}
-                onChange={this.update('email')}
-                placeholder="Email"
-              />
-            <br/>
-              <input type="text"
-                value={this.state.handle}
-                onChange={this.update('username')}
-                placeholder="Handle"
-              />
-            <br/>
-              <select name="Job" onChange={this.update('job')} defaultValue="">
-                <option value="">Job (optional)</option>
-                <option value="engineering">Engineering</option>
-                <option value="programmering">Programming</option>
-                <option value="health-science">Health Science</option>
-                <option value="business">Business</option>
-                <option value="construction">Construction</option>
-                <option value="food-service">Food Service</option>
-                <option value="deisgn">Design</option>
-                <option value="law">Law</option>
-                <option value="teaching">Teaching</option>
-              </select>
-            <br/>            
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                placeholder="Password"
-              />
-            <br/>
-              <input type="password"
-                value={this.state.password2}
-                onChange={this.update('password2')}
-                placeholder="Confirm Password"
-              />
-            <br/>
-            <button type="submit">Submit</button>
-            {this.renderErrors()}
-            <Link to={'/login'}>Login</Link>
-            <br />
-          </div>
-        </form>
+      <div className='signin-page-container'>
+        <img className='signin-background' src="https://wallpaperaccess.com/full/4982.jpg" alt="" />
+        <div className="session-form-container">
+          <form onSubmit={this.handleSubmit}>
+            <div className="session-form">
+              <h1>
+                <p className='form-header'>GroupThink</p>
+              </h1>
+              <br/>
+                <input type="text"
+                  className='session-input'
+                  value={this.state.email}
+                  onChange={this.update('email')}
+                  placeholder="Email"
+                />
+              <br/>
+                <input type="text"
+                  className='session-input'
+                  value={this.state.handle}
+                  onChange={this.update('username')}
+                  placeholder="Handle"
+                />
+              <br/>
+                <select className='job-dropdown' name="Job" onChange={this.update('job')} defaultValue="">
+                  <option value="">Job (optional)</option>
+                  <option value="engineering">Engineering</option>
+                  <option value="programmering">Programming</option>
+                  <option value="health-science">Health Science</option>
+                  <option value="business">Business</option>
+                  <option value="construction">Construction</option>
+                  <option value="food-service">Food Service</option>
+                  <option value="deisgn">Design</option>
+                  <option value="law">Law</option>
+                  <option value="teaching">Teaching</option>
+                </select>
+              <br/>            
+                <input type="password"
+                  className='session-input'
+                  value={this.state.password}
+                  onChange={this.update('password')}
+                  placeholder="Password"
+                />
+              <br/>
+                <input type="password"
+                  className='session-input'
+                  value={this.state.password2}
+                  onChange={this.update('password2')}
+                  placeholder="Confirm Password"
+                />
+              <br/>
+              <button className='submit-btn' type="submit">Submit</button>
+              {this.renderErrors()}
+              <Link className='link-to-signup' to={'/login'}>Login</Link>
+              <br />
+            </div>
+          </form>
+        </div>
       </div>
     );
   }
