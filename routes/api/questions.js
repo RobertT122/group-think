@@ -56,15 +56,37 @@ router.get('/:id', passport.authenticate('jwt', { session: false }), (req, res) 
 });
 
 router.patch('/:id/deactivate', (req, res) => {
-  Question.findByIdAndUpdate(req.params.id,
-      {
-        active: false
+  console.log(req.params.id)
+  let yesCount = 100; noCount = 100; totalCount = 100; majority =  null
+  Answer.find({question: {_id: req.params.id}})
+  
+    .then(answers => {
+      totalCount = answers.length
+      console.log(totalCount)
+      yesCount = answers.filter(answer => answer.input === true).length
+      console.log(yesCount)
+      noCount = answers.filter(answer => answer.input === false).length
+      console.log(noCount)
+      if (yesCount > noCount) {
+        majority = true
+      }else if (yesCount < noCount) {
+        majority = false
       }
-    )
+      console.log(majority)
+      Question.findByIdAndUpdate(req.params.id,
+        {
+          active: false,
+          majority,
+          total: totalCount,
+          yes: yesCount,
+          no: noCount
+        }
+      )
       .then(question => res.json(question))
       .catch(err =>
           res.status(404).json({ noquestionfound: 'No question found with that ID' })
       );
+    })
 });
 
 
