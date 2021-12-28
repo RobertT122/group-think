@@ -82,7 +82,7 @@
 
 .toggle-active-btn {
     background: var(--testingcolor);
-    border: 1px solid lightgray);
+    border: 1px solid var(--testingcolor);
     border-radius: 8px;
     color: white;
     box-shadow: -3px 7px 9px -1px rgb(0 0 0 / 60%);

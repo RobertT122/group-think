@@ -6,6 +6,7 @@ class NavBar extends React.Component {
     super(props);
     this.logoutUser = this.logoutUser.bind(this);
     this.getLinks = this.getLinks.bind(this);
+    this.renderNav = this.renderNav.bind(this);
   }
 
   logoutUser(e) {
@@ -18,7 +19,7 @@ class NavBar extends React.Component {
       if (this.props.loggedIn) {
         return (
             <div>
-                <button onClick={this.logoutUser}>Logout</button>
+                <button className='logout-btn' onClick={this.logoutUser}>Logout</button>
             </div>
         );
       } else {
@@ -26,14 +27,18 @@ class NavBar extends React.Component {
       }
   }
 
+  renderNav() {
+    if (this.props.loggedIn) {
+      return <div className='header-nav'>{this.getLinks()}</div>
+    } else {
+      return null
+    }
+  }
+
   render() {
-      return (
-        <div>
-            <div className='logo-container'>
-            </div>
-            { this.getLinks() }
-        </div>
-      );
+      return(
+        this.renderNav()
+      )
   }
 }
 

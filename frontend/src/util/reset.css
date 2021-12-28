@@ -63,7 +63,7 @@ select {
 
 :root{
   --primarycolor: #0D6EFF;
-  --backgroundcolor: #ECECEC;
+  --backgroundcolor: white;
   --lighttext: #838383;
   --darktext: #595959;
   --green: #0EA11D;
