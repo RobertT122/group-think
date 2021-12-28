@@ -9,8 +9,9 @@ export default class QuestionIndex extends Component {
         super(props)
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.props.fetchUserQuestions(this.props.currentUser.id);
+        //when the component mounts --fetch all of the current users questions 
     }
 
     componentDidUpdate(){
@@ -25,7 +26,7 @@ export default class QuestionIndex extends Component {
             <div className='question-index-container'>
                 <QuestionFormContainer fetchUserQuestions={fetchUserQuestions} currentUser={currentUser} />
                 {questions.map(
-                    (question, idx) => <QuestionIndexItem key={idx} fetchUserQuestions={fetchUserQuestions} currentUser={currentUser} question={question}  deactivate={deactivate} />
+                    (question, idx) => <QuestionIndexItem key={idx} fetchUserQuestions={fetchUserQuestions} currentUser={currentUser} question={question} deactivate={deactivate} />
                 )}
             </div>
         )

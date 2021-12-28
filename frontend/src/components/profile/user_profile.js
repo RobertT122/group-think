@@ -10,10 +10,9 @@
             <div className='user-details-container'>
                 <p className='name'>{currentUser.username}</p>
                 <p className='job'>{currentUser.job}</p>
-
             </div>
             <div className='group-think-score-container'>
-                <p>1984</p>
+                <p className='score'>1984</p>
             </div>
          </div>
      )

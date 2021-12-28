@@ -1,4 +1,4 @@
-import { getQuestions, getUserQuestions, createQuestion, deactivateQuestion, nextQuestion } from "../util/question_api_util"; //grabbing the api utils that hit the backend 
+import { getQuestions, getUserQuestions, createQuestion, deactivateQuestion, nextQuestion, getQuestion } from "../util/question_api_util"; //grabbing the api utils that hit the backend 
 
 //exporting constants 
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS';
@@ -7,7 +7,6 @@ export const RECEIVE_NEW_QUESTION = 'RECEIVE_NEW_QUESTION';
 export const RECEIVE_QUESTION = 'RECEIVE_QUESTION';
 export const RECEIVE_NEXT_QUESTION = 'RECEIVE_NEXT_QUESTION';
 
-//regular ole action creators
 export const receiveQuestions = questions => ({
     type: RECEIVE_QUESTIONS,
     questions
@@ -53,6 +52,13 @@ export const fetchUserQuestions = id => dispatch => (
 export const composeQuestion = data => dispatch => (
     createQuestion(data)
         .then(question => dispatch(receiveNewQuestion(question)))
+        .catch(err => console.log(err))
+);
+
+//getting a question by id and putting it on the state 
+export const fetchQuestion = id => dispatch => (
+    getQuestion(id)
+        .then(question => dispatch(receiveQuestion(question)))
         .catch(err => console.log(err))
 );
 

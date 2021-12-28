@@ -108,3 +108,29 @@ button:hover{
   border-radius: 5px;
   padding-left: 10px;
 }
+
+.header-nav {
+  width: 100vw;
+  height: 5vh;
+  /* background-color: white; */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.logout-btn {
+  width: 80px;
+  height: 30px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 30px;
+}
+
+.main-page-photo {
+  width: 100vw;
+  height: 94vh;
+}
+
+

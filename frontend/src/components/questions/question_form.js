@@ -15,7 +15,7 @@ class QuestionForm extends Component {
     handleSubmit(e){
         e.preventDefault();
         this.props.composeQuestion(this.state);
-        this.props.fetchUserQuestions(this.props.currentUser._id);
+        this.props.fetchUserQuestions(this.props.currentUser._id); //rerendering effect
         this.setState({text: ""})
     }
 
@@ -23,6 +23,19 @@ class QuestionForm extends Component {
         return e => this.setState({
             [field]: e.target.value
         })
+    }
+
+    randomExample() {
+        const examples = [
+            "Do you get scared when lights are off you are home alone?", 
+            "Should I eat donuts for dinner?", 
+            "Should I pick my nose?",
+            "Is it true that accountants have the worst job ever?",
+            "Is it true that girls never fart?"
+        ]
+
+        const index = Math.floor(Math.random() * 4)
+        return examples[index]
     }
 
     render() {
@@ -35,7 +48,7 @@ class QuestionForm extends Component {
                             type="text" 
                             onChange={this.update('text')}
                             value={this.state.text}
-                            placeholder='Example: Should I eat donuts for dinner?'
+                            placeholder={this.randomExample()}
                             className='question-form-input-text'
                             />
                     </label>
