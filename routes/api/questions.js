@@ -55,6 +55,20 @@ router.get('/:id', passport.authenticate('jwt', { session: false }), (req, res) 
         );
 });
 
+router.patch('/:id/reactivate', (req, res) => {
+  Question.findByIdAndUpdate(req.params.id,
+    {
+      active: true
+    },
+    {new: true}
+    )
+    .then(question => {
+      return res.json(question)})
+    .catch(err =>
+        res.status(404).json({ noquestionfound: 'No question found with that ID' })
+    );
+})
+
 router.patch('/:id/deactivate', (req, res) => {
   let yesCount = 100; noCount = 100; totalCount = 100; majority =  null
   Question.findById(req.params.id)
@@ -70,14 +84,15 @@ router.patch('/:id/deactivate', (req, res) => {
       }else if (yesCount < noCount) {
         majority = false
       }
-      Question.findByIdAndUpdate(req.params.id,
+       Question.findByIdAndUpdate(req.params.id,
         {
           active: false,
           majority,
           total: totalCount,
           yes: yesCount,
           no: noCount
-        }
+        },
+        {new: true}
       )
       .then(question => {
         return res.json(question)})
@@ -106,5 +121,10 @@ router.post('/',
     }
   );
 
+  router.delete('/:id/delete', (req, res) => {
+    Question.findByIdAndDelete(req.params.id,
+      (err) => res.json(err || "Question Deleted")
+      )
+  })
+
   module.exports = router;
-  // test
