@@ -3,6 +3,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
 const db = require("../../config/keys").mongoURI;
+const ObjectID = require("mongodb").ObjectID
 
 const Question = require('../../models/Question');
 const Answer = require('../../models/Answer');
@@ -21,7 +22,7 @@ router.get('/next', passport.authenticate('jwt', { session: false }), (req, res)
       ))
       Question.find({_id: {$nin: answersQuestions}, user: { $nin: [req.user]}, active: true})
       //answer.question_id comes back undefined
-    .sort({ date: -1 }).limit(1)
+    .sort({ date: -1 })
     .then(questions => res.json(questions))
     .catch(err => 
         res.status(404).json({ noquestionsfound: 'No questions found' })
@@ -108,5 +109,8 @@ router.post('/',
     }
   );
 
+
+
+
+
   module.exports = router;
-  // test
