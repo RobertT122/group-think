@@ -3,6 +3,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
 const db = require("../../config/keys").mongoURI;
+const ObjectID = require("mongodb").ObjectID
 
 const Question = require('../../models/Question');
 const Answer = require('../../models/Answer');
@@ -116,28 +117,24 @@ router.post('/',
     Answer.find({user: req.user})
       .then( answers => {
         allAnswers = answers
-        console.log(allAnswers)
         let answersQuestions = answers.map( answer => answer.question._id)
-        console.log(answersQuestions)
         Question.find({_id: {$in: answersQuestions}, active: false})
           .then( questions => {
-            console.log(questions)
-            let questionIds = questions.map(question => question._id)
-            console.log(questionIds)
-            console.log(allAnswers)
-            questionIds.forEach(qId => console.log(allAnswers.find(answer => answer.question._id === qId)))
-            let readyAnswers = allAnswers.filter( answer => questionIds.includes(answer.question._id))
-            console.log(readyAnswers)
-            console.log(readyAnswers.map(answer => answer.score))
-            console.log("reach")
-            return res.json(readyAnswers)
+            let total = 0
+            questions.forEach(question => {
+              answer = allAnswers.find(answer => answer.question._id.toString() === question._id.toString())
+              if (answer.input === question.majority) {
+                total += answer.weight 
+              } else {
+                total -= answer.weight
+              }
+              return res.json(total)
+            })
           })
-          console.log("when")
       })
-
+  
   
   })
-
 
 
 
