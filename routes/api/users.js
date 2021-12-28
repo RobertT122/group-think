@@ -94,6 +94,7 @@ router.get('/current', passport.authenticate('jwt', {session: false}), (req, res
   });
 })
 
+//getting the users score based on id 
 router.get('/score/:user_id', passport.authenticate('jwt', { session: false }), (req, res) => {
 
   let allAnswers
