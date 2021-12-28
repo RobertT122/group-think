@@ -109,32 +109,6 @@ router.post('/',
     }
   );
 
-  router.get('/score/:user_id', passport.authenticate('jwt', { session: false }), (req, res) => {
-    console.log("test")
-  
-    let allAnswers
-    
-    Answer.find({user: req.user})
-      .then( answers => {
-        allAnswers = answers
-        let answersQuestions = answers.map( answer => answer.question._id)
-        Question.find({_id: {$in: answersQuestions}, active: false})
-          .then( questions => {
-            let total = 0
-            questions.forEach(question => {
-              answer = allAnswers.find(answer => answer.question._id.toString() === question._id.toString())
-              if (answer.input === question.majority) {
-                total += answer.weight 
-              } else {
-                total -= answer.weight
-              }
-              return res.json(total)
-            })
-          })
-      })
-  
-  
-  })
 
 
 
