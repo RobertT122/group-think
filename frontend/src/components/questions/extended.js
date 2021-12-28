@@ -9,6 +9,7 @@ export default class Extended extends Component {
 
     render() {
         const { question } = this.props;
+        
         return (
             <div className='extended-container'>
                 <Bar 
@@ -26,8 +27,15 @@ export default class Extended extends Component {
                             backgroundColor: 'rgba(54, 162, 235, 0.2)',
                             borderWidth: 1
                         }],
-                        labels: []
-                    }}    
+                        labels: ['Responses']
+                    }}
+                    options= {{
+                                scale: {
+                                    ticks: {
+                                        precision: 0
+                                    }
+                                }
+                             }}
                 />
             </div>
         )
