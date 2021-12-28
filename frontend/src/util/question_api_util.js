@@ -24,3 +24,8 @@ export const deactivateQuestion = id => {
 export const nextQuestion = () => {
     return axios.get(`/api/questions/next`)
 }
+
+//get specific question with id
+export const getQuestion = id => {
+    return axios.get(`/api/questions/${id}`)
+}

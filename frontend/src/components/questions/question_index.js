@@ -25,7 +25,7 @@ export default class QuestionIndex extends Component {
             <div className='question-index-container'>
                 <QuestionFormContainer fetchUserQuestions={fetchUserQuestions} currentUser={currentUser} />
                 {questions.map(
-                    (question, idx) => <QuestionIndexItem key={idx} fetchUserQuestions={fetchUserQuestions} currentUser={currentUser} question={question}  deactivate={deactivate} />
+                    (question, idx) => <QuestionIndexItem key={idx} fetchUserQuestions={fetchUserQuestions} currentUser={currentUser} question={question} deactivate={deactivate} />
                 )}
             </div>
         )

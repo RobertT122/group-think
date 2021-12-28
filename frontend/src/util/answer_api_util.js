@@ -12,3 +12,4 @@ export const getQuestionAnswers = id => {
 export const createAnswer = data => {
     return axios.post('/api/answers/', data)
 };
+

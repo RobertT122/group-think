@@ -11,7 +11,8 @@ export default class QuestionIndexItem extends Component {
     onClick(e){
         e.preventDefault()
         this.props.deactivate(this.props.question._id)
-        this.props.fetchUserQuestions(this.props.currentUser._id) //rerender the component 
+        //getting all the user's questions to invoke automatically rerender component--
+        this.props.fetchUserQuestions(this.props.currentUser._id) //rerender the component? 
     }
 
     render() {
@@ -19,7 +20,7 @@ export default class QuestionIndexItem extends Component {
 
         return (
             <div className={`question-index-item-container-${question.active ? "active" : "inactive"}`}>
-                <p className='question-body'>{question.text}</p>
+                <div className='question-body'>{question.text}</div>
                 { question.active ? <button onClick={this.onClick} className='toggle-active-btn'>Deactivate</button> : "" }
                 { question.active ? "" : <ExtendedContainer question={question} />}
             </div>

@@ -6,10 +6,10 @@
     flex-wrap: wrap;
     height: 700px;
     width: 100%;
-    background-color: var(--backgroundcolor);
+    /* background-color: var(--backgroundcolor);
     border: 1px solid lightgray;
     border-radius: 10px;
-    box-shadow: -3px 7px 9px -1px rgb(0 0 0 / 60%);
+    box-shadow: -3px 7px 9px -1px rgb(0 0 0 / 60%); */
 }
 
 .ans-questions-container {
@@ -28,8 +28,8 @@
     width: 85%;
     margin-top: 20px;
     font-size: 25px;
-    background-color: var(--testingcolor);
-    color: white;
+    /* background-color: var(--testingcolor); */
+    color: black;
 }
 
 /* answer index styles */
