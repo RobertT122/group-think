@@ -21,7 +21,7 @@ router.get('/next', passport.authenticate('jwt', { session: false }), (req, res)
       ))
       Question.find({_id: {$nin: answersQuestions}, user: { $nin: [req.user]}, active: true})
       //answer.question_id comes back undefined
-    .sort({ date: -1 }).limit(1)
+    .sort({ date: -1 })
     .then(questions => res.json(questions))
     .catch(err => 
         res.status(404).json({ noquestionsfound: 'No questions found' })
@@ -107,6 +107,40 @@ router.post('/',
       newQuestion.save().then(question => res.json(question));
     }
   );
+
+  router.get('/score/:user_id', passport.authenticate('jwt', { session: false }), (req, res) => {
+    console.log("test")
+  
+    let allAnswers
+    
+    Answer.find({user: req.user})
+      .then( answers => {
+        allAnswers = answers
+        console.log(allAnswers)
+        let answersQuestions = answers.map( answer => answer.question._id)
+        console.log(answersQuestions)
+        Question.find({_id: {$in: answersQuestions}, active: false})
+          .then( questions => {
+            console.log(questions)
+            let questionIds = questions.map(question => question._id)
+            console.log(questionIds)
+            console.log(allAnswers)
+            questionIds.forEach(qId => console.log(allAnswers.find(answer => answer.question._id === qId)))
+            let readyAnswers = allAnswers.filter( answer => questionIds.includes(answer.question._id))
+            console.log(readyAnswers)
+            console.log(readyAnswers.map(answer => answer.score))
+            console.log("reach")
+            return res.json(readyAnswers)
+          })
+          console.log("when")
+      })
+
+  
+  })
+
+
+
+
 
   module.exports = router;
   // test
