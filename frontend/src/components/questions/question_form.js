@@ -15,7 +15,7 @@ class QuestionForm extends Component {
     handleSubmit(e){
         e.preventDefault();
         this.props.composeQuestion(this.state);
-        this.props.fetchUserQuestions(this.props.currentUser._id);
+        this.props.fetchUserQuestions(this.props.currentUser._id); //rerendering effect
         this.setState({text: ""})
     }
 

@@ -80,7 +80,7 @@
     border-radius: 12px;
     box-shadow: 7px 6px 16px -1px #828282;
     padding: 12px;
-    justify-content: space-between;
+    justify-content: flex-start;
     font-size: 20px;
     flex-wrap: wrap;
     flex-direction: column;
@@ -99,8 +99,15 @@
 
 .question-body {
     width: 100%;
-    
+    height: 20%;    
 }
+
+.extended-container {
+    width: 80%;
+    height: 40%;
+}
+
+
 
 /* question index item extended styling */
 

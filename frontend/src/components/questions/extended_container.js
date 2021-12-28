@@ -1,15 +1,14 @@
 import { connect } from 'react-redux';
 import Extended from './extended';
-import { fetchQuestionAnswers } from '../../actions/answers_actions';
+import { fetchQuestion } from '../../actions/question_actions';
 
 
-const mapSTP = state => ({
-    answers: state.answers.question
-    //subscribing extended questions to answers slice of state bec passed down as props--
+const mapSTP = ({questions}) => ({
+
 });
 
 const mapDTP = dispatch => ({
-    // getQuestion: id => dispatch()
+    fetchQuestion: id => dispatch(fetchQuestion(id)) //proved to be unnecessary since passing question via prop threading item-->extended
 });
 
 export default connect(mapSTP, mapDTP)(Extended);

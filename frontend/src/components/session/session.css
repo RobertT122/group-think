@@ -114,7 +114,7 @@ button:hover{
   height: 5vh;
   background-color: white;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
   margin-bottom: 10px;
 }

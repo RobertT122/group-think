@@ -9,8 +9,9 @@ export default class QuestionIndex extends Component {
         super(props)
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.props.fetchUserQuestions(this.props.currentUser.id);
+        //when the component mounts --fetch all of the current users questions 
     }
 
     componentDidUpdate(){
