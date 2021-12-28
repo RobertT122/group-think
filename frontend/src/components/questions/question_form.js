@@ -25,6 +25,19 @@ class QuestionForm extends Component {
         })
     }
 
+    randomExample() {
+        const examples = [
+            "Do you get scared when lights are off you are home alone?", 
+            "Should I eat donuts for dinner?", 
+            "Should I pick my nose?",
+            "Is it true that accountants have the worst job ever?",
+            "Is it true that girls never fart?"
+        ]
+
+        const index = Math.floor(Math.random() * 4)
+        return examples[index]
+    }
+
     render() {
 
         return (
@@ -35,7 +48,7 @@ class QuestionForm extends Component {
                             type="text" 
                             onChange={this.update('text')}
                             value={this.state.text}
-                            placeholder='Example: Should I eat donuts for dinner?'
+                            placeholder={this.randomExample()}
                             className='question-form-input-text'
                             />
                     </label>

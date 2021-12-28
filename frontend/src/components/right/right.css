@@ -22,7 +22,7 @@
 
 .ans-questions-btn {
     border: 1px solid var(--testingcolor);
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: -3px 7px 9px -1px rgb(0 0 0 / 60%);
     height: 50%;
     width: 85%;
@@ -30,6 +30,7 @@
     font-size: 25px;
     /* background-color: var(--testingcolor); */
     color: black;
+    font-family: "Playfair Display", serif;
 }
 
 /* answer index styles */
