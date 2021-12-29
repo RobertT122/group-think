@@ -1,12 +1,15 @@
 import React from "react"
 import { useState } from "react"
 import { useEffect } from "react"
+
 import Loading from "./loading"
 import ReadingContainer from './reading_container'
 import AnsweringContainer from './answering_container'
 import DoneContainer from "./done_container"
+
 import { connect } from "react-redux"
 import { fetchNextQuestion } from "../../actions/question_actions"
+import NoQuestions from "./no_questions"
 
 const AnswerLogic = (props) => {
   const initialState={time: 0, frame: 0}
@@ -70,7 +73,7 @@ const AnswerLogic = (props) => {
         //Will need to add the dispatch for the answer
         return <DoneContainer question={props.question} answer={answer}/>
       case 4:
-        return <h1>No question found</h1>
+        return <NoQuestions />
       default:
         return <Loading />
     }
@@ -78,8 +81,6 @@ const AnswerLogic = (props) => {
 
   return(
     <div>
-
-      <h2 className='timer'>{state.time/10} : {state.frame}</h2>
       {frameComponent()}
 
       {/* {(state.done)? <button onClick={resetTimer}>reset</button>: <></>} */}
