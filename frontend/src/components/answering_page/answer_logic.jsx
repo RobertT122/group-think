@@ -29,7 +29,7 @@ const AnswerLogic = (props) => {
   useEffect(() => {
     if(!timerReady){
       console.log("content not loaded")
-    } else {
+    } else if (props.question){
       setAnswer((prev) => Object.assign({},prev,{question_id: props.question._id}))
       console.log("content loaded")
       const interval = setInterval(() => {
@@ -56,16 +56,22 @@ const AnswerLogic = (props) => {
     setAnswer((prev) => Object.assign({}, prev, {input: bool, weight: state.time}))
   }
 
+  const noQuestionFound = () => {
+    setState({time:0, frame: 4})
+  }
+
   const frameComponent = () => {
     switch(state.frame){
       case 1:
-        return <ReadingContainer time={state.time} question={props.question}/>
+        return <ReadingContainer time={state.time} question={props.question} noQuestionFound={noQuestionFound}/>
       case 2:
         return <AnsweringContainer time={state.time}  setInput={setInput} question={props.question}/> //yes
       case 3:
         //On componenet did mount set the submit the answer
         //Will need to add the dispatch for the answer
         return <DoneContainer question={props.question} answer={answer}/>
+      case 4:
+        return <h1>No question found</h1>
       default:
         return <Loading />
     }
