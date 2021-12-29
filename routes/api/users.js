@@ -107,19 +107,18 @@ router.get('/score/:user_id', passport.authenticate('jwt', { session: false }), 
         .then( questions => {
           let total = 0
           questions.forEach(question => {
-            answer = allAnswers.find(answer => answer.question._id.toString() === question._id.toString())
+            let answer = allAnswers.find(answer => answer.question._id.toString() === question._id.toString())
             if (answer.input === question.majority) {
               total += answer.weight 
               if (total > 1984) {total = 1984}
             } else {
               total -= answer.weight
-              if (total < 1984) {total = -1984}
+              if (total < -1984) {total = -1984}
             }
           })
           return res.json(total)
         })
     })
-
 })
 
 module.exports = router;
