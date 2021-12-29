@@ -3,9 +3,6 @@ import { Link } from 'react-router-dom'
 import './answering_page.css'
 
 export default class Done extends Component {
-    constructor(props) {
-        super(props)
-    }
 
     componentDidMount() {
         console.log("mounting")
@@ -23,7 +20,7 @@ export default class Done extends Component {
     }
 
     render() {
-        const { question, answer } = this.props;
+        const { question } = this.props;
 
         return (
             <div className='done-container'>

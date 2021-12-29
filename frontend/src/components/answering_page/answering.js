@@ -2,12 +2,9 @@ import React, { Component } from 'react'
 import './answering_page.css'
 
 export default class Answering extends Component {
-    constructor(props){
-        super(props)
-    }
 
     render() {
-        const { setInput, earlyStop, time, question } = this.props;
+        const { setInput, time, question } = this.props;
         return (
             <div className='answering-container'>
                 <div className='question-text-container'>

@@ -22,6 +22,7 @@ const AnswerLogic = (props) => {
   useEffect(() => {
     console.log(props.questionArr)
     props.fetchNextQuestion().then(startTimer)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const startTimer = () => {
@@ -54,6 +55,7 @@ const AnswerLogic = (props) => {
     } else {
       setState({time:0, frame: 4})
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [timerReady]);
   
   const setInput = (bool) => {

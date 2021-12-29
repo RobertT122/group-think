@@ -5,9 +5,6 @@ import QuestionFormContainer from '../questions/question_form_container';
 import './question_index.css';
 
 export default class QuestionIndex extends Component {
-    constructor(props){
-        super(props)
-    }
 
     componentDidMount() {
         this.props.fetchUserQuestions(this.props.currentUser.id);

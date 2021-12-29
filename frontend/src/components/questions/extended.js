@@ -3,9 +3,6 @@ import { Bar } from 'react-chartjs-2'
 import Chart from 'chart.js/auto'
 
 export default class Extended extends Component {
-    constructor(props){
-        super(props)
-    }
 
     render() {
         const { question } = this.props;

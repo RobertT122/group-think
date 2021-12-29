@@ -2,9 +2,6 @@
  import './profile.css'
 
  class UserProfile extends React.Component {
-    constructor(props) {
-        super(props)
-    }
 
     componentDidMount() {
         this.props.getScore(this.props.currentUser.id)
