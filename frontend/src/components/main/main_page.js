@@ -37,11 +37,11 @@ class MainPage extends React.Component {
     if (background === 1) {
       return <img className='main-page-photo' src="https://i.pinimg.com/originals/25/c8/5a/25c85ad9cde83d7c0c5e347fea5c8789.jpg" alt="" />
     } else if (background === 2) {
-      return <img className='main-page-photo' src="https://wallpaperaccess.com/full/4671265.jpg" alt="" />
+      return <img className='main-page-photo' src="https://i.pinimg.com/originals/18/80/0f/18800f9c0d9e33a3a95dfd0731a049a0.png" alt="" />
     } else if (background === 3) {
-      return <img className='main-page-photo' src="https://cdn.wallpapersafari.com/12/21/THZVnD.jpg" alt="" />
+      return <img className='main-page-photo' src="https://wallpaperbat.com/img/2268-simple-light-wallpaper-top-free-simple-light-background.jpg" alt="" />
     } else {
-      return <img className='main-page-photo' src="https://wallpaperaccess.com/full/2416049.jpg" alt="" />
+      return <img className='main-page-photo' src="https://wallpaperaccess.com/full/1183615.png" alt="" />
     }
   }
 
