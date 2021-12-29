@@ -111,12 +111,10 @@ button:hover{
 
 .header-nav {
   width: 100vw;
-  height: 5vh;
-  /* background-color: white; */
+  height: 6vh;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-bottom: 10px;
 }
 
 .logout-btn {
