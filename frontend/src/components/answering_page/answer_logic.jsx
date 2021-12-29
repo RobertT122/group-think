@@ -48,6 +48,8 @@ const AnswerLogic = (props) => {
           }
         })
       }, 100);
+    } else {
+      setState({time:0, frame: 4})
     }
   }, [timerReady]);
   
@@ -56,14 +58,11 @@ const AnswerLogic = (props) => {
     setAnswer((prev) => Object.assign({}, prev, {input: bool, weight: state.time}))
   }
 
-  const noQuestionFound = () => {
-    setState({time:0, frame: 4})
-  }
 
   const frameComponent = () => {
     switch(state.frame){
       case 1:
-        return <ReadingContainer time={state.time} question={props.question} noQuestionFound={noQuestionFound}/>
+        return <ReadingContainer time={state.time} question={props.question} />
       case 2:
         return <AnsweringContainer time={state.time}  setInput={setInput} question={props.question}/> //yes
       case 3:

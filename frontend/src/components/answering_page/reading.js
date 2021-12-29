@@ -5,7 +5,7 @@ export default class Reading extends Component {
     
 
     render() {
-        const { question, time, noQuestionFound } = this.props;
+        const { question, time} = this.props;
         if (question){
             return (
                 <div className='reading-container'>
@@ -22,7 +22,6 @@ export default class Reading extends Component {
                 </div>
             )
         } else {
-            noQuestionFound()
             return <></>
         }
     }
