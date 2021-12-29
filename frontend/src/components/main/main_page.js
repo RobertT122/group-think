@@ -48,19 +48,20 @@ class MainPage extends React.Component {
   render() {
     return (
       <div className='main-page-container'>
-        <div className='theme-btn-container'>
-          <button onClick={this.toggleDropdown} className='theme-btn'>Theme</button>
-          <div className={this.state.show ? `theme-btn-container-show`: "theme-btn-container-hide" }>
-            <button onClick={this.handleChange(1)}>1</button>
-            <button onClick={this.handleChange(2)}>2</button>
-            <button onClick={this.handleChange(3)}>3</button>
-            <button onClick={this.handleChange(4)}>4</button>
-          </div>
-        </div>
+        
         <div className='background-photo'>
           {this.renderBackground()}
         </div>
         <div className='profile-left'>
+          <div className='theme-btn-container'>
+            <button onClick={this.toggleDropdown} className='theme-btn'>Theme</button>
+            <div className={this.state.show ? `theme-btn-container-show`: "theme-btn-container-hide" }>
+              <button onClick={this.handleChange(1)}>1</button>
+              <button onClick={this.handleChange(2)}>2</button>
+              <button onClick={this.handleChange(3)}>3</button>
+              <button onClick={this.handleChange(4)}>4</button>
+            </div>
+          </div>
           <UserProfileContainer />
           <QuestionIndexContainer />
         </div>

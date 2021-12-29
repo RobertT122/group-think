@@ -7,7 +7,7 @@
     /* box-shadow: -3px 7px 9px -1px rgb(0 0 0 / 60%); */
     /* border: 1px solid lightgray; */
     /* border-radius: 12px; */
-    height: 77vh;
+    height: 70vh;
     width: 100%;
     justify-content: space-between;
     overflow-y:auto
@@ -164,6 +164,10 @@
     border: 1px solid snow;
     border-radius: 3px;
     box-shadow: -3px 7px 9px -1px rgb(0 0 0 / 60%);
+}
+
+.theme-btn-container {
+    height: fit-content;
 }
 
 /* question index item extended styling */
