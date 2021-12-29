@@ -133,7 +133,38 @@
     cursor: pointer;
 }
 
+.theme-btn-container-show {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    width: 200px;
+    height: 40px;
+    z-index: 11;
+}
 
+.theme-btn-container-show button {
+    width: 20%;
+    height: 100%;
+    border: 1px solid snow;
+    border-radius: 3px;
+    box-shadow: -3px 7px 9px -1px rgb(0 0 0 / 60%);
+}
+
+.theme-btn-container-hide {
+    display: none;
+}
+
+.theme-btn {
+    margin: 5px;
+    width: 100px;
+    height: 40px;
+    border: 1px solid snow;
+    border-radius: 3px;
+    box-shadow: -3px 7px 9px -1px rgb(0 0 0 / 60%);
+}
 
 /* question index item extended styling */
 

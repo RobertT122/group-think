@@ -13,6 +13,7 @@ class MainPage extends React.Component {
     }
     this.renderBackground = this.renderBackground.bind(this)
     this.handleChange = this.handleChange.bind(this)
+    this.toggleDropdown = this.toggleDropdown.bind(this)
   }
 
   handleChange(background) {
@@ -24,8 +25,9 @@ class MainPage extends React.Component {
   }
 
   toggleDropdown() {
+    const bool = this.state.show
     this.setState({
-      show: true
+      show: !bool
     })
   }
 
@@ -39,24 +41,15 @@ class MainPage extends React.Component {
     } else if (background === 3) {
       return <img className='main-page-photo' src="https://cdn.wallpapersafari.com/12/21/THZVnD.jpg" alt="" />
     } else {
-      return <img className='main-page-photo' src="https://i.pinimg.com/originals/26/6f/17/266f1731e0b4060fea5265efe6fa6d55.jpg" alt="" />
+      return <img className='main-page-photo' src="https://wallpaperaccess.com/full/2416049.jpg" alt="" />
     }
   }
-
-  // componentDidUpdate(prevProps) {
-  //   if (prevProps.background !== this.props.background) {
-  //     const bool = this.state.rerender
-  //     this.setState({
-  //       rerender: !bool
-  //     })
-  //   }
-  // }
 
   render() {
     return (
       <div className='main-page-container'>
         <div className='theme-btn-container'>
-          <button className='theme-btn'>Theme</button>
+          <button onClick={this.toggleDropdown} className='theme-btn'>Theme</button>
           <div className={this.state.show ? `theme-btn-container-show`: "theme-btn-container-hide" }>
             <button onClick={this.handleChange(1)}>1</button>
             <button onClick={this.handleChange(2)}>2</button>
