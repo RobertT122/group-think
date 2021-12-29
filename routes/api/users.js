@@ -115,8 +115,8 @@ router.get('/score/:user_id', passport.authenticate('jwt', { session: false }), 
               total -= answer.weight
               if (total < 1984) {total = -1984}
             }
-            return res.json(total)
           })
+          return res.json(total)
         })
     })
 

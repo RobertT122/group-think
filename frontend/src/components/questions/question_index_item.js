@@ -11,10 +11,9 @@ export default class QuestionIndexItem extends Component {
 
     //deactivating question
     onClick(e){
-        e.preventDefault()
+        // e.preventDefault()
         this.props.deactivate(this.props.question._id)
-        //getting all the user's questions to invoke automatically rerender component--
-        this.props.fetchUserQuestions(this.props.currentUser._id) //rerender the component? 
+        this.props.fetchUserQuestions(this.props.currentUser._id) 
     }
 
     handleDelete() {
@@ -23,7 +22,7 @@ export default class QuestionIndexItem extends Component {
     }
 
     handleReactivate() {
-        this.props.reactivate(this.props.question.id)
+        this.props.reactivate(this.props.question._id)
         this.props.fetchUserQuestions(this.props.currentUser._id)
     }
 
