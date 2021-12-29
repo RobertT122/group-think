@@ -13,17 +13,17 @@ export default class QuestionIndexItem extends Component {
     onClick(e){
         // e.preventDefault()
         this.props.deactivate(this.props.question._id)
-        this.props.fetchUserQuestions(this.props.currentUser._id) 
+        // this.props.fetchUserQuestions(this.props.currentUser._id) 
     }
 
     handleDelete() {
         this.props.removeQuestion(this.props.question._id)
-        this.props.fetchUserQuestions(this.props.currentUser._id)
+        // this.props.fetchUserQuestions(this.props.currentUser._id)
     }
 
     handleReactivate() {
         this.props.reactivate(this.props.question._id)
-        this.props.fetchUserQuestions(this.props.currentUser._id)
+        // this.props.fetchUserQuestions(this.props.currentUser._id)
     }
 
     render() {

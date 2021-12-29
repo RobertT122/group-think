@@ -21,7 +21,8 @@ export default function QuestionsReducer(state = defaultState, action) {
         newState.new = action.question.data
         return newState;
       case RECEIVE_QUESTION:
-        newState[action.question.id] = action.question
+        let idx = newState.user.findIndex(obj => obj._id === action.question.data._id)
+        newState.user[idx] = action.question.data
         return newState;
       case RECEIVE_NEXT_QUESTION:
         newState.next = action.question.data
