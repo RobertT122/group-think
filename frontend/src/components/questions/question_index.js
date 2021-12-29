@@ -11,22 +11,16 @@ export default class QuestionIndex extends Component {
 
     componentDidMount() {
         this.props.fetchUserQuestions(this.props.currentUser.id);
-        //when the component mounts --fetch all of the current users questions 
-    }
-
-    componentDidUpdate(){
-        // this.props.fetchUserQuestions(this.props.currentUser.id);
     }
 
     render() {
-        //need to iterate through the questions array and map out new arr of questions index items 
-        const { questions, deactivate, fetchUserQuestions, currentUser } = this.props; //array of question objects & the function to toggle the status of the question index item
+        const { questions, deactivate, fetchUserQuestions, currentUser, removeQuestion, reactivate } = this.props; 
 
         return (
             <div className='question-index-container'>
                 <QuestionFormContainer fetchUserQuestions={fetchUserQuestions} currentUser={currentUser} />
                 {questions.map(
-                    (question, idx) => <QuestionIndexItem key={idx} fetchUserQuestions={fetchUserQuestions} currentUser={currentUser} question={question} deactivate={deactivate} />
+                    (question, idx) => <QuestionIndexItem key={idx} removeQuestion={removeQuestion} reactivate={reactivate} fetchUserQuestions={fetchUserQuestions} currentUser={currentUser} question={question} deactivate={deactivate} />
                 )}
             </div>
         )

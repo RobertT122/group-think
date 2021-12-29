@@ -55,6 +55,7 @@ router.get('/:id', passport.authenticate('jwt', { session: false }), (req, res) 
         );
 });
 
+//reactivate question
 router.patch('/:id/reactivate', (req, res) => {
   Question.findByIdAndUpdate(req.params.id,
     {
@@ -121,6 +122,7 @@ router.post('/',
     }
   );
 
+  
   router.delete('/:id/delete', (req, res) => {
     Question.findByIdAndDelete(req.params.id,
       (err) => res.json(err || "Question Deleted")

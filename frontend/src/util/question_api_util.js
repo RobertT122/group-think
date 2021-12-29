@@ -29,3 +29,13 @@ export const nextQuestion = () => {
 export const getQuestion = id => {
     return axios.get(`/api/questions/${id}`)
 }
+
+//delete question 
+export const deleteQuestion = id => {
+    return axios.delete(`/api/questions/${id}/delete`)
+}
+
+//reactivate question 
+export const reactivateQuestion = id => {
+    return axios.patch(`/api/questions/${id}/reactivate`)
+}

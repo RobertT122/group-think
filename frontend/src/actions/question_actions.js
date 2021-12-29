@@ -1,4 +1,14 @@
-import { getQuestions, getUserQuestions, createQuestion, deactivateQuestion, nextQuestion, getQuestion } from "../util/question_api_util"; //grabbing the api utils that hit the backend 
+import { 
+    getQuestions, 
+    getUserQuestions, 
+    createQuestion, 
+    deactivateQuestion, 
+    nextQuestion, 
+    getQuestion, 
+    deleteQuestion,
+    reactivateQuestion
+} from "../util/question_api_util"; 
+
 
 //exporting constants 
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS';
@@ -73,5 +83,17 @@ export const deactivate = id => dispatch => (
 export const fetchNextQuestion = () => dispatch => (
     nextQuestion()
         .then(question => dispatch(receiveNextQuestion(question)))
+        .catch(err => console.log(err))
+);
+
+export const removeQuestion = id => dispatch => (
+    deleteQuestion(id)
+        .then(res => dispatch(receiveQuestion(res)))
+        .catch(err => console.log(err))
+);
+
+export const reactivate = id => dispatch => (
+    reactivateQuestion(id)
+        .then(res => dispatch(receiveQuestion(res)))
         .catch(err => console.log(err))
 );

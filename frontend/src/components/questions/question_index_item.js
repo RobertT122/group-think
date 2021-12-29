@@ -17,13 +17,27 @@ export default class QuestionIndexItem extends Component {
         this.props.fetchUserQuestions(this.props.currentUser._id) //rerender the component? 
     }
 
+    handleDelete() {
+        this.props.removeQuestion(this.props.question._id)
+        this.props.fetchUserQuestions(this.props.currentUser._id)
+    }
+
+    handleReactivate() {
+        this.props.reactivate(this.props.question.id)
+        this.props.fetchUserQuestions(this.props.currentUser._id)
+    }
+
     render() {
         const { question } = this.props;
         return (
             <div className={`question-index-item-container-${question.active ? "active" : "inactive"}`}>
+                <div onClick={this.handleDelete.bind(this)} className='close-x'>X</div>
+
                 <div className='question-body'>{question.text}</div>
                 { question.active ? <button onClick={this.onClick} className='toggle-active-btn'>Deactivate</button> : "" }
                 { question.active ? "" : <ExtendedContainer question={question} />}
+                { question.active ? "" : <button onClick={this.handleReactivate.bind(this)} className='reactivate-btn'>Reactivate</button> }
+
             </div>
         )
     }

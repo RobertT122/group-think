@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import QuestionIndex from './question_index';
-import { fetchUserQuestions, deactivate } from '../../actions/question_actions';
+import { fetchUserQuestions, deactivate, removeQuestion, reactivate } from '../../actions/question_actions';
 
 const mapSTP = state => ({
     questions: Object.values(state.questions.user),
@@ -10,7 +10,9 @@ const mapSTP = state => ({
 const mapDTP = dispatch => ({
     fetchUserQuestions: id => dispatch(fetchUserQuestions(id)),
     //deactive function that will make question.active = false 
-    deactivate: id => dispatch(deactivate(id))
+    deactivate: id => dispatch(deactivate(id)),
+    removeQuestion: id => dispatch(removeQuestion(id)),
+    reactivate: id => dispatch(reactivate(id)),
     
 })
 

@@ -67,6 +67,7 @@
     flex-wrap: wrap;
     flex-direction: column;
     background: #fffafa36;
+    position: relative;
 
 }
 
@@ -86,7 +87,7 @@
     font-size: 16px;
     flex-wrap: wrap;
     flex-direction: column;
-
+    position: relative;
 }
 
 .toggle-active-btn {
@@ -108,6 +109,27 @@
 .extended-container {
     width: 80%;
     height: 40%;
+}
+
+.close-x {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.reactivate-btn {
+    position: absolute;
+    top: 5px;
+    right: 40px;
+    z-index: 10;
+    border: 1px solid lightslategray;
+    border-radius: 5px;
+    background-color: lightslategray;
+    color: white;
+    box-shadow: -3px 7px 9px -1px rgb(0 0 0 / 60%);
+    cursor: pointer;
 }
 
 
