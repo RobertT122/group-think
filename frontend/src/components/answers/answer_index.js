@@ -10,17 +10,10 @@ export default class AnswerIndex extends Component {
         this.props.fetchUserAnswers(this.props.currentUser.id)
     }
 
-    componentDidUpdate() {
-        // this.props.fetchUserAnswers(this.props.currentUser.id)
-    }
-
     render() {
         const { answers, openModal } = this.props;
         return (
             <div className='answer-index-container'>
-                {answers.map(
-                    answer => <AnswerIndexItem key={answer._id} answer={answer} openModal={openModal} />
-                )}
             </div>
         )
     }

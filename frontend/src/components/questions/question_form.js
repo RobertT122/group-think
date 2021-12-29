@@ -27,14 +27,16 @@ class QuestionForm extends Component {
 
     randomExample() {
         const examples = [
-            "Do you get scared when lights are off you are home alone?", 
+            "Do you get scared when lights are off and you are home alone?", 
             "Should I eat donuts for dinner?", 
             "Should I pick my nose?",
             "Is it true that accountants have the worst job ever?",
-            "Is it true that girls never fart?"
+            "Is it true that girls never fart?",
+            "Are pandas in fact a menace to bamboos?",
+            ""
         ]
 
-        const index = Math.floor(Math.random() * 4)
+        const index = Math.floor(Math.random() * 6)
         return examples[index]
     }
 

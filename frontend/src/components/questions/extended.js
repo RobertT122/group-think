@@ -27,7 +27,7 @@ export default class Extended extends Component {
                             backgroundColor: 'rgba(54, 162, 235, 0.2)',
                             borderWidth: 1
                         }],
-                        labels: ['Responses']
+                        labels: ['']
                     }}
                     options= {{
                                 scale: {

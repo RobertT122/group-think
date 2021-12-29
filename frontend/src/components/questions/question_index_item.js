@@ -9,9 +9,8 @@ export default class QuestionIndexItem extends Component {
         this.onClick = this.onClick.bind(this)
     }
 
-    //deactivating question
     onClick(e){
-        // e.preventDefault()
+        e.preventDefault()
         this.props.deactivate(this.props.question._id)
         this.props.fetchUserQuestions(this.props.currentUser._id) 
     }
