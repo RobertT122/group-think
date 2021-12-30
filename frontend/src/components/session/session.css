@@ -132,4 +132,6 @@ button:hover{
   height: 100vh;
 }
 
-
+.errors ul {
+  color: white;
+}
