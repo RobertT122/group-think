@@ -69,13 +69,13 @@ const AnswerLogic = (props) => {
       case 1:
         return <ReadingContainer time={state.time} question={props.question} /> 
       case 2:
-        return <AnsweringContainer time={state.time}  setInput={setInput} question={props.question}/> //yes
+        return <AnsweringContainer time={state.time}  setInput={setInput} question={props.question}/> 
       case 3:
-        return <DoneContainer question={props.question} answer={answer}/> //design done 
+        return <DoneContainer question={props.question} answer={answer}/> 
       case 4:
-        return <NoQuestions /> //design done 
+        return <NoQuestions /> 
       default:
-        return <Loading /> //design done 
+        return <Loading /> 
     }
   }
 

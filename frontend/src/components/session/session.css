@@ -115,6 +115,7 @@ button:hover{
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  background-color: white;
 }
 
 .logout-btn {
@@ -128,7 +129,7 @@ button:hover{
 
 .main-page-photo {
   width: 100vw;
-  height: 94vh;
+  height: 100vh;
 }
 
 

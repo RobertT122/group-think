@@ -173,4 +173,13 @@
 
 /* question index item extended styling */
 
+/* delta styling */
+.positive-delta {
+    color: lightgreen;
+}
+
+.negative-delta {
+    color: red;
+}
+
 

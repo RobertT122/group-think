@@ -53,7 +53,7 @@ export default class Done extends Component {
                     <button className='next-question' onClick={()=>window.location.reload(false)}>Next Question</button>
                 </div>
                 <div className="go-home">
-                    <Link to="/">Home</Link>
+                    <Link className='home-link-ans' to="/">Home</Link>
                 </div>
             </div>
         )

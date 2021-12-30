@@ -3,6 +3,7 @@ import UserProfileContainer from '../profile/user_profile_container';
 import QuestionIndexContainer from '../questions/question_index_container';
 import RightContainer from '../right/right_container';
 import './main.css';
+import NavBarContainer from '../nav/navbar_container'
 
 class MainPage extends React.Component {
   constructor(props) {
@@ -39,7 +40,7 @@ class MainPage extends React.Component {
     } else if (background === 2) {
       return <img className='main-page-photo' src="https://i.pinimg.com/originals/18/80/0f/18800f9c0d9e33a3a95dfd0731a049a0.png" alt="" />
     } else if (background === 3) {
-      return <img className='main-page-photo' src="https://wallpaperbat.com/img/2268-simple-light-wallpaper-top-free-simple-light-background.jpg" alt="" />
+      return <img className='main-page-photo' src="https://wallpaperaccess.com/full/863628.jpg" alt="" />
     } else {
       return <img className='main-page-photo' src="https://wallpaperaccess.com/full/1183615.png" alt="" />
     }
@@ -48,7 +49,7 @@ class MainPage extends React.Component {
   render() {
     return (
       <div className='main-page-container'>
-        
+        <NavBarContainer />
         <div className='background-photo'>
           {this.renderBackground()}
         </div>
