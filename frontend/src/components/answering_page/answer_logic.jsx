@@ -43,7 +43,7 @@ const AnswerLogic = (props) => {
           }
           switch(state.frame){
             case 1:
-              return {time: 40, frame: 2};
+              return {time: 40000, frame: 2};
             case 2:
               return {time: 0, frame: 3}
             default:
@@ -67,17 +67,15 @@ const AnswerLogic = (props) => {
   const frameComponent = () => {
     switch(state.frame){
       case 1:
-        return <ReadingContainer time={state.time} question={props.question} />
+        return <ReadingContainer time={state.time} question={props.question} /> 
       case 2:
         return <AnsweringContainer time={state.time}  setInput={setInput} question={props.question}/> //yes
       case 3:
-        //On componenet did mount set the submit the answer
-        //Will need to add the dispatch for the answer
-        return <DoneContainer question={props.question} answer={answer}/>
+        return <DoneContainer question={props.question} answer={answer}/> //design done 
       case 4:
-        return <NoQuestions />
+        return <NoQuestions /> //design done 
       default:
-        return <Loading />
+        return <Loading /> //design done 
     }
   }
 

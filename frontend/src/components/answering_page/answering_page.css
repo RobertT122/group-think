@@ -1,4 +1,6 @@
 @import url(../../util/reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Open+Sans:wght@300&family=Playfair+Display&family=Roboto:wght@300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Playfair+Display&family=Roboto:wght@300;500&display=swap');
 
 body {
     height: 100%;
@@ -10,67 +12,122 @@ body {
 }
 
 .answering-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-wrap: wrap;
+    width: 100vw;
+    height: 94vh;
+    position: relative;
 }
 
 .reading-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-wrap: wrap;
+    width: 100vw;
+    height: 94vh;
+    position: relative;
 }
 
 .done-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-wrap: wrap;
+    height: 94vh;
+    width: 100vw;
+    position: relative;
 }
 
 .question-text-container {
-    height: 30%;
-    width: 100%;
+    height: 10vh;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'roboto', sans-serif;
-    font-weight: 300;
-    margin-bottom: 25px;
+    /* border: 1px solid snow; */
+    /* box-shadow: -3px 7px 9px -1px rgb(0 0 0 / 60%); */
 }
-.loading-container {
-    height: 30%;
-    width: 100%;
+
+.question-text-container-ans {
+    height: 10vh;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'roboto', sans-serif;
-    font-weight: 300;
-    margin-bottom: 25px;
+    border: 1px solid snow; 
+    box-shadow: 0px 0px 14px 5px rgba(0,0,0,0.76);
+    position: absolute;
+    top: 30vh;
+}
+
+.loading-container {
+    height: 40vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .user-container {
-    height: 30%;
+    height: 20vh;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'roboto', sans-serif;
     font-weight: 300;
-    margin-bottom: 25px;
+    /* margin-bottom: 25px; */
 }
 
 .result-container {
-    height: 30%;
+    height: 20vh;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'roboto', sans-serif;
+    flex-wrap: wrap;
+}
+
+.proxy {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.placeholder {
+    font-family: "Roboto", serif;
+    font-size: 18px;
     font-weight: 300;
-    margin-bottom: 25px;
+}
+
+.res-div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* align-items: ; */
+}
+
+.res-div-2 {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-wrap: wrap;
+}
+
+.result-yes {
+    font-family: "Playfair Display";
+    font-size: 35px;
+    color: green;
+}
+
+.result-no {
+    font-family: "Playfair Display";
+    font-size: 35px;
+    color: red;
+}
+
+.result-done {
+    font-family: "Playfair Display";
+    font-size: 35px;
+    color: rgb(74, 94, 182);
 }
 
 .next-container {
@@ -102,9 +159,10 @@ body {
     color: white;
     width: 300px;
     height: 150px;
-    font-family: 'roboto', sans-serif;
+    font-family: 'Playfair Display', sans-serif;
     font-weight: 500;
     font-size: 25px;
+    box-shadow: -3px 7px 9px -1px rgb(0 0 0 / 60%);
 }
 
 .go-home a {
@@ -119,23 +177,29 @@ body {
 
 
 .text {
-    font-family: 'roboto', sans-serif;
-    font-weight: 300;
-    font-size: 30px;
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 35px;
+}
+
+.reading-text {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 35px;
+    font-weight: 400;
 }
 
 .user-text {
-    font-family: 'roboto', sans-serif;
-    font-weight: 300;
-    font-size: 20px;
-    margin-left: 10px;
+    font-family: 'Caveat', cursive;
+    font-weight: 400;
+    font-size: 30px;
+    margin-left: 20px;
 }
 
 .user-image {
-    height: 150px;
-    width: 150px;
+    height: 100px;
+    width: 100px;
     border: 1px solid white;
     border-radius: 50%;
+    box-shadow: -3px 7px 9px -1px rgb(0 0 0 / 60%);
 }
 
 .button-container {
@@ -173,17 +237,101 @@ body {
 }
 
 .time {
-    height: 30%;
+    height: 20vh;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'roboto', sans-serif;
-    font-weight: 300;
+   
+}
+
+.time-answering-pg {
+    height: 20vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50vh;
 }
 
 .timer {
-    font-family: 'roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 300;
+    font-size: 25px;
+}
+
+.timer-answering-pg {
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+}
+
+.no-question-div {
+    height: 94vh;
+    width: 100vw;
+    position: relative;
+}
+
+.photo-no-question {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+.no-question-div h2 {
+    color: white;
+    font-family: "Playfair Display", serif;
     font-size: 30px;
+}
+
+.no-question-text {
+    position: absolute;
+    top: 50%;
+    right: 20%;
+}
+
+.link-container {
+    position: absolute;
+    top: 60%;
+    right: 27%;
+}
+
+.home-link {
+    text-decoration: none;
+    color: white;
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.hell-yes {
+    position: absolute;
+    top: 0vh;
+    left: 0%;
+    background-color: rgba(114, 255, 151, 0.2); 
+    z-index: 10;
+    height: 94vh;
+    width: 50vw;
+    cursor: pointer;
+}
+
+.hell-no {
+    position: absolute;
+    top: 0vh;
+    right: 0%;
+    background-color: rgba(255, 0, 0, 0.2); 
+    z-index: 10;
+    height: 94vh;
+    width: 50vw;
+    cursor: pointer;
+}
+.hell-yes:hover {
+    background-color: rgba(114, 255, 151, 0.4); 
+}
+
+.hell-no:hover {
+    background-color: rgba(255, 0, 0, 0.4); 
 }

@@ -11,11 +11,29 @@ export default class Done extends Component {
 
     result(){
         if (this.props.answer.input) {
-            return <h2 className='result'>Yes</h2>
+            return (
+                <div className='res-div'>
+                    <div className='proxy'>
+                        <p className='placeholder'>You answered</p> 
+                    </div>
+                    <div className='res-div-2'>
+                        <h2 className='result-yes'>Yes</h2>
+                    </div>
+                </div>
+            )
         } else if (this.props.answer.input === false) {
-            return <h2 className='result'>No</h2>
+            return (
+                <div className='res-div'>
+                    <div className='proxy'>
+                        <p className='placeholder'>You answered</p> 
+                    </div>
+                    <div className='res-div-2'>
+                        <h2 className='result-no'>No</h2>
+                    </div>
+                </div>
+            )
         } else {
-            return <h2 className='result'>Time's Up</h2>
+            return <h2 className='result-done'>Time's Up</h2>
         }
     }
 
@@ -24,6 +42,7 @@ export default class Done extends Component {
 
         return (
             <div className='done-container'>
+                <img className='photo-no-question' src="https://wallup.net/wp-content/uploads/2017/11/23/500424-minimalism-animals-birds.jpg" alt="" />
                 <div className='question-text-container'>
                     <p className='text'>{question.text}</p>
                 </div>

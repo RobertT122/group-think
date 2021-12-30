@@ -7,23 +7,21 @@ export default class Answering extends Component {
         const { setInput, time, question } = this.props;
         return (
             <div className='answering-container'>
-                <div className='question-text-container'>
+                <div className='question-text-container-ans'>
                     <p className='text'>{question.text}</p>
                 </div>
-                <div className='button-container'>
-                    <button 
-                        onClick={()=> { 
+
+                <div onClick={()=> { 
                             setInput(true)
-                        }} 
-                        className='yes'>Yes</button>    
-                    <button 
-                        onClick={()=> { 
+                        }}  
+                     className='hell-yes'></div>
+                <div 
+                    onClick={()=> { 
                             setInput(false)
                         }} 
-                        className='no'>No</button>    
-                </div>
-                <div className='time'>
-                    <p className='timer'>{Math.floor(time/10)}</p>
+                    className='hell-no'></div>
+                <div className='time-answering-pg'>
+                    <p className='timer-answering-pg'>{Math.floor(time/10)}</p>
                 </div>
             </div>
         )
