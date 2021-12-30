@@ -43,7 +43,7 @@ const AnswerLogic = (props) => {
           }
           switch(state.frame){
             case 1:
-              return {time: 40000, frame: 2};
+              return {time: 50, frame: 2};
             case 2:
               return {time: 0, frame: 3}
             default:
