@@ -5,7 +5,6 @@ import './answering_page.css'
 export default class Done extends Component {
 
     componentDidMount() {
-        console.log("mounting")
         this.props.submitAnswer(this.props.answer)
     }
 
