@@ -1,5 +1,0 @@
-//copy this file to import the eye.svg into a react component with animations
-//use <Eye/> where you want the eye component to be
-
-import {ReactComponent as Eye} from '../eye/eye.svg';
-import '../eye/eye.css'
