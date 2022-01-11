@@ -1,5 +1,8 @@
 @import '../../util/reset.css';
 
+a{
+  text-decoration: none;
+}
 
 .flex {
   display: flex;
