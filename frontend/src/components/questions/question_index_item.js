@@ -17,7 +17,6 @@ export default class QuestionIndexItem extends Component {
 
     handleDelete() {
         this.props.removeQuestion(this.props.question._id)
-        // this.props.fetchUserQuestions(this.props.currentUser._id)
     }
 
     handleReactivate() {

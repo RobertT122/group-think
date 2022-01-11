@@ -7,11 +7,10 @@ import QuestionIndexContainer from './questions/question_index_container';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import AnswerLogic from './answering_page/answer_logic';
-import NavBarContainer from './nav/navbar_container';
+// import NavBarContainer from './nav/navbar_container';
 
 const App = () => (
   <div>
-    <NavBarContainer />
     <Switch>
         <ProtectedRoute exact path='/index' component={QuestionIndexContainer} />
         <ProtectedRoute exact path="/" component={MainPageContainer} />

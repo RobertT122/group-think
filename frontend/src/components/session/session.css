@@ -1,4 +1,5 @@
 @import '../../util/reset.css';
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Merriweather&family=Open+Sans:wght@300&family=Playfair+Display&family=Roboto:wght@300;500&display=swap');
 
 .signing-page-container {
   width: 100vw;
@@ -65,7 +66,7 @@ button:hover{
   border: 1px solid white;
   color: white;
   font-size: 20px;
-  font-family: 'Roboto';
+  font-family: 'Playfair Display', serif;
   font-weight: 300;
 }
 
@@ -86,7 +87,7 @@ button:hover{
   border: 1px solid snow;
   color: white;
   font-size: 20px;
-  font-family: 'Roboto';
+  font-family: 'Playfair Display', serif;
   font-weight: 300;
 }
 
@@ -115,6 +116,7 @@ button:hover{
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  background-color: white;
 }
 
 .logout-btn {
@@ -128,7 +130,13 @@ button:hover{
 
 .main-page-photo {
   width: 100vw;
-  height: 94vh;
+  height: 100vh;
 }
 
+.errors ul {
+  color: white;
+}
 
+.signup-errors {
+  color: white;
+}

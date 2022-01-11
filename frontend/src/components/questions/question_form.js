@@ -13,9 +13,9 @@ class QuestionForm extends Component {
     }
 
     handleSubmit(e){
-        e.preventDefault();
-        this.props.composeQuestion(this.state);
-        this.props.fetchUserQuestions(this.props.currentUser._id); //rerendering effect
+        e.preventDefault(); 
+        this.props.composeQuestion(this.state) //first allow us to create the question on the backened and upon complete grab the user questions 
+            .then(() => this.props.fetchUserQuestions(this.props.currentUser._id)) 
         this.setState({text: ""})
     }
 
@@ -27,7 +27,7 @@ class QuestionForm extends Component {
 
     randomExample() {
         const examples = [
-            "Do you get scared when lights are off and you are home alone?", 
+            "Do you get scared when the lights are off and you are home alone?", 
             "Should I eat donuts for dinner?", 
             "Can I wear jeans to a wedding?",
             "Do accountants have the worst job ever?",

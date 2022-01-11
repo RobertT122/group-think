@@ -16,6 +16,7 @@ export const RECEIVE_USER_QUESTIONS = 'RECEIVE_USER_QUESTIONS';
 export const RECEIVE_NEW_QUESTION = 'RECEIVE_NEW_QUESTION';
 export const RECEIVE_QUESTION = 'RECEIVE_QUESTION';
 export const RECEIVE_NEXT_QUESTION = 'RECEIVE_NEXT_QUESTION';
+export const REMOVE_QUESTION = "REMOVE_QUESTION";
 
 export const receiveQuestions = questions => ({
     type: RECEIVE_QUESTIONS,
@@ -34,7 +35,7 @@ export const receiveNewQuestion = question => ({
 
 export const receiveQuestion = question => ({
     type: RECEIVE_QUESTION,
-    question
+    question //question object that was deleted as the payload 
 })
 
 export const receiveNextQuestion = question => ({
@@ -42,9 +43,12 @@ export const receiveNextQuestion = question => ({
     question
 })
 
-//thunk action creators:
+export const destroyQuestion = id => ({
+    type: REMOVE_QUESTION, 
+    id
+})
 
-//questions index 
+
 export const fetchQuestions = () => dispatch => (
     getQuestions()
         .then(questions => dispatch(receiveQuestions(questions)))
@@ -88,7 +92,7 @@ export const fetchNextQuestion = () => dispatch => (
 
 export const removeQuestion = id => dispatch => (
     deleteQuestion(id)
-        .then(res => dispatch(receiveQuestion(res)))
+        .then(() => dispatch(destroyQuestion(id))) 
         .catch(err => console.log(err))
 );
 
