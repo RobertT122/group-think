@@ -13,9 +13,9 @@ class QuestionForm extends Component {
     }
 
     handleSubmit(e){
-        e.preventDefault();
-        this.props.composeQuestion(this.state);
-        this.props.fetchUserQuestions(this.props.currentUser._id); //rerendering effect
+        e.preventDefault(); 
+        this.props.composeQuestion(this.state) //first allow us to create the question on the backened and upon complete grab the user questions 
+            .then(() => this.props.fetchUserQuestions(this.props.currentUser._id)) 
         this.setState({text: ""})
     }
 

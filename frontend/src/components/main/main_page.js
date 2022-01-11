@@ -2,8 +2,8 @@ import React from 'react';
 import UserProfileContainer from '../profile/user_profile_container';
 import QuestionIndexContainer from '../questions/question_index_container';
 import RightContainer from '../right/right_container';
-import './main.css';
 import NavBarContainer from '../nav/navbar_container'
+import './main.css';
 
 class MainPage extends React.Component {
   constructor(props) {

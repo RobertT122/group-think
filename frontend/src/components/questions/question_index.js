@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import QuestionIndexItem from './question_index_item';
 import QuestionFormContainer from '../questions/question_form_container';
-
 import './question_index.css';
 
 export default class QuestionIndex extends Component {
