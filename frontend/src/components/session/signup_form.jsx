@@ -43,7 +43,12 @@ class SignupForm extends React.Component {
       password2: this.state.password2
     };
 
-    this.props.signup(user, this.props.history); 
+    let signin = {
+      email: this.state.email,
+      password: this.state.password
+    };
+
+    this.props.signup(user, this.props.history)
   }
 
   renderErrors() {
