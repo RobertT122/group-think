@@ -133,6 +133,10 @@
     font-size: 16px;
 }
 
+.close-x:hover {
+    color: red;
+}
+
 .reactivate-btn {
     position: absolute;
     top: 5px;
@@ -187,6 +191,34 @@
 }
 
 /* question index item extended styling */
+
+.question-mark-container-close {
+    position: absolute;
+    bottom: 15%;
+    right: 4.5%;
+    z-index: 10;
+}
+
+.show-btn-exp {
+    position: absolute;
+    z-index: 10;
+    /* background-color: white; */
+    top: 40%;
+    right: 3%;
+    font-size: 13px;
+    font-family: 'Playfair Display', serif;
+    width: 140px;
+    height: 55px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    box-shadow: -3px 7px 9px -1px rgb(0 0 0 / 60%);
+    padding: 5px;
+}
+
+div .fas.fa-question {
+    color: white;
+    cursor: pointer;
+}
 
 /* delta styling */
 .positive-delta {

@@ -92,6 +92,10 @@
     display: none;
 }
 
+.group-think-score-container .fas.fa-question {
+    color: black;
+}
+
 .show-score-exp {
     position: absolute;
     top: 1vh;

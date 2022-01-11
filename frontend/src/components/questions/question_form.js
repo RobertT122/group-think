@@ -6,7 +6,6 @@ class QuestionForm extends Component {
         super(props)
         this.state = {
             text: "",
-
         }
 
         this.handleSubmit = this.handleSubmit.bind(this); //becuase i use this in the handlesubmit function 

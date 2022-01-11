@@ -51,7 +51,7 @@
                     <p className='job'>{currentUser.job}</p>
                 </div>
                 <div className='group-think-score-container'>
-                    <div onMouseLeave={this.toggleShow} onMouseEnter={this.toggleShow} className='question-mark-container'><i className="far fa-question-circle"></i></div>
+                    <div onMouseLeave={this.toggleShow} onMouseEnter={this.toggleShow} className='question-mark-container'><i className="fas fa-question"></i></div>
                     <p className={score.score > 0 ? 'pos-score' : 'neg-score' }>{score.score}</p>
                 </div>
             </div>
