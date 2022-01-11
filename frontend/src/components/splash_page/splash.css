@@ -1,3 +1,6 @@
+@import '../../util/reset.css';
+
+
 .flex {
   display: flex;
 }
@@ -8,4 +11,10 @@
 
 .splash-links, .section1, .section2, .section3{
   flex-direction: row;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
 }

@@ -1,10 +1,8 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import "./splash.css"
 
 class SplashPage extends React.Component {
-  constructor(props) {
-    super(props)
-  }
 
   render() {
     return (
@@ -35,7 +33,7 @@ class SplashPage extends React.Component {
           </ul>
         </div>
         <div className="1984-photos flex">
-          <img className="cityskyline-photo"/>
+          <img className="cityskyline-photo" alt="skyline"/>
           <img className="brother-eye" alt="Big Brother Eye"/>
           <h1>Imagine a place...</h1>
           <p>...where everyone thought the same, the absence of dissonance with thought.
@@ -45,7 +43,7 @@ class SplashPage extends React.Component {
           </p>
         </div>
         <div className="section1 flex">
-          <img className="section1-image" alt="Question Image"/>
+          <img className="section1-image" alt="Question"/>
           <h2>Ask your questions to the masses</h2>
           <p>Questions delivered in order of submission to the prolls for rapid responses.</p>
         </div>
@@ -53,10 +51,10 @@ class SplashPage extends React.Component {
           <h2>Answer your fellow mans questions</h2>
           <p>Your answer is timed to create quick thinking and show if you can answer in
           the same manner as others.</p>
-          <img className="section2-image" alt="Answer Image"/>
+          <img className="section2-image" alt="Answer"/>
         </div>
         <div className="section3 flex">
-          <img className="section3-image" alt="Score Image"/>
+          <img className="section3-image" alt="Score"/>
           <h2>Show off your devotion to groupThink</h2>
           <p>
             Earn a score based on how fast you answer and if you are in line with the majority
