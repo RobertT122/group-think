@@ -1,0 +1,11 @@
+.flex {
+  display: flex;
+}
+
+.splash-page-container{
+  flex-direction: column;
+}
+
+.splash-links, .section1, .section2, .section3{
+  flex-direction: row;
+}
