@@ -2,6 +2,7 @@ import React from 'react';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Switch } from 'react-router-dom';
 
+import SplashPageContainer from './splash_page/splash_container'
 import MainPageContainer from './main/main_page_container';
 import QuestionIndexContainer from './questions/question_index_container';
 import LoginFormContainer from './session/login_form_container';

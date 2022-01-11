@@ -3,6 +3,47 @@
 
 .flex {
   display: flex;
+  padding-bottom: 200px;
+  justify-content: center;
+  z-index: 2;
+}
+
+.front-logo{
+  max-width: 70px;
+}
+
+.front{
+  position: relative;
+  padding: 0;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 3;
+}
+
+.front > h1{
+  text-align: center;
+  font-size: 50px;
+}
+
+.front > p{
+  font-size: 20px;
+}
+
+.cityskyline-photo{
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  width: 100%;
+}
+
+.brother-eye{
+  position: sticky;
+  margin-left: auto;
+  margin-right: auto;
+  top: 10vh;
+  z-index: 0;
+  opacity: 75%;
 }
 
 .splash-page-container{
@@ -11,10 +52,20 @@
 
 .splash-links, .section1, .section2, .section3{
   flex-direction: row;
+  justify-content: space-around;
+}
+
+.splash-links{
+  justify-content: space-evenly;
 }
 
 ul {
   display: flex;
   flex-direction: row;
   list-style: none;
+}
+
+li{
+  padding-left: 15px;
+  padding-right: 15px;
 }

@@ -45,7 +45,6 @@ router.get('/user/:user_id', passport.authenticate('jwt', { session: false }), (
 
 // question lookup by id
 router.get('/:id', passport.authenticate('jwt', { session: false }), (req, res) => {
-
     Question.findById(req.params.id)
         .then(question => res.json(question))
         .catch(err =>
