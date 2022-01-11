@@ -17,15 +17,14 @@ class SplashPage extends React.Component {
             </li>
             <li>
               Robert Tetrault
-              git and linkedin
+              <a href="https://github.com/RobertT122"> GitHub</a> <a href="https://www.linkedin.com/in/robert-tetrault-28ba4b218/">LinkedIn</a>
             </li>
             <li>
               Jack Chen
-              git and linkedin
+              <a href="https://github.com/jackychen6825"> GitHub</a> <a href="https://www.linkedin.com/in/jacky-chen6825/">LinkedIn</a>
             </li>
             <li>
-              Liam Williams
-              git and linkedin
+              Liam Williams <a href="https://github.com/Williamsliam23"> GitHub</a> <a href="https://www.linkedin.com/in/liam-williams-76035613a/">LinkedIn</a>
             </li>
             <li>
             <Link to="/login">Login</Link>
