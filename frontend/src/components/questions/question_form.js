@@ -27,7 +27,7 @@ class QuestionForm extends Component {
 
     randomExample() {
         const examples = [
-            "Do you get scared when lights are off and you are home alone?", 
+            "Do you get scared when the lights are off and you are home alone?", 
             "Should I eat donuts for dinner?", 
             "Should I pick my nose?",
             "Is it true that accountants have the worst job ever?",

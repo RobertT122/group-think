@@ -53,19 +53,9 @@ class MainPage extends React.Component {
       <div className='main-page-container'>
         <NavBarContainer />
         <div className='background-photo'>
-          {this.renderBackground()}
+          <img className='main-page-photo' src="https://i.pinimg.com/originals/25/c8/5a/25c85ad9cde83d7c0c5e347fea5c8789.jpg" alt="" />
         </div>
         <div className='profile-left'>
-          <div className='theme-btn-container'>
-            <button onClick={this.toggleDropdown} className='theme-btn'>Theme</button>
-            <div className={this.state.show ? `theme-btn-container-show`: "theme-btn-container-hide" }>
-              <button onClick={this.handleChange(1)}>1</button>
-              <button onClick={this.handleChange(2)}>2</button>
-              <button onClick={this.handleChange(3)}>3</button>
-              <button onClick={this.handleChange(4)}>4</button>
-              <button onClick={this.handleChange(5)}>5</button>
-            </div>
-          </div>
           <UserProfileContainer />
           <QuestionIndexContainer />
         </div>

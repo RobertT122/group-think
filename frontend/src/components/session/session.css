@@ -136,3 +136,7 @@ button:hover{
 .errors ul {
   color: white;
 }
+
+.signup-errors {
+  color: white;
+}
