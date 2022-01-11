@@ -20,7 +20,6 @@ const AnswerLogic = (props) => {
 
   // fetches question and starts timer
   useEffect(() => {
-    console.log(props.questionArr)
     props.fetchNextQuestion().then(startTimer)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -32,10 +31,9 @@ const AnswerLogic = (props) => {
   //increments timer and sets a frame to control what components are displayed
   useEffect(() => {
     if(!timerReady){
-      console.log("content not loaded")
+      //constent not loaded
     } else if (props.question){
       setAnswer((prev) => Object.assign({},prev,{question_id: props.question._id}))
-      console.log("content loaded")
       const interval = setInterval(() => {
         setState(state=> {
           if (state.time > 1){

@@ -1,0 +1,69 @@
+#eye-svg{
+  width: 20%
+}
+
+#Eye{
+  animation: eye 3s infinite alternate ease-in-out
+}
+
+@keyframes eye {
+  from{
+    transform: translate(0,12%);
+  }
+  25%{
+    transform: translate(10%, 15%);
+  }
+  75%{
+    transform: translate(0, 19%)
+  }
+  to{
+    transform: translate(-10%, 15%)
+  }
+}
+#Pupil{
+  animation: dilating 3s infinite;
+  transform-origin:center;
+}
+
+@keyframes dilating{
+  from{
+    transform: scale(1);
+  }
+  20%{
+    transform: scale(.90);
+  }
+  to{
+    transform: scale(1)
+  }
+}
+
+#Vector_2{
+  transform-origin: center;
+  animation: blinking 5s infinite
+}
+
+@keyframes blinking {
+  from{
+    transform: scaleY(100%);
+  }
+  1%{
+    transform: scaleY(0)
+  }
+  5%{
+    transform: scaleY(100%)
+  }
+}
+
+#Glare{
+  animation: glare-shift 4s infinite alternate ease-in-out;
+}
+
+
+@keyframes glare-shift{
+  from{
+    transform: skew(5deg, 2deg) scaley(.95);
+  }
+  to{
+    transform: translateX(6%);
+  }
+}
