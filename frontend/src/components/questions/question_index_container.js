@@ -9,7 +9,6 @@ const mapSTP = state => ({
 
 const mapDTP = dispatch => ({
     fetchUserQuestions: id => dispatch(fetchUserQuestions(id)),
-    //deactive function that will make question.active = false 
     deactivate: id => dispatch(deactivate(id)),
     removeQuestion: id => dispatch(removeQuestion(id)),
     reactivate: id => dispatch(reactivate(id)),

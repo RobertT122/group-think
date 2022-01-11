@@ -1,4 +1,4 @@
-import { RECEIVE_QUESTIONS, RECEIVE_USER_QUESTIONS, RECEIVE_NEW_QUESTION, RECEIVE_QUESTION, RECEIVE_NEXT_QUESTION } from "../actions/question_actions";
+import { RECEIVE_QUESTIONS, RECEIVE_USER_QUESTIONS, RECEIVE_NEW_QUESTION, RECEIVE_QUESTION, RECEIVE_NEXT_QUESTION, DELETE_QUESTION, REMOVE_QUESTION } from "../actions/question_actions";
 
 //creating questions slice of state:
 
@@ -21,10 +21,15 @@ export default function QuestionsReducer(state = defaultState, action) {
         newState.new = action.question.data
         return newState;
       case RECEIVE_QUESTION:
-        newState[action.question.id] = action.question
+        let idx = newState.user.findIndex(obj => obj._id === action.question.data._id)
+        newState.user[idx] = action.question.data
         return newState;
       case RECEIVE_NEXT_QUESTION:
         newState.next = action.question.data
+        return newState;
+      case REMOVE_QUESTION:
+        let index = newState.user.findIndex(obj => obj._id === action.id)
+        newState.user.splice(index, 1)
         return newState;
       default:
         return state;

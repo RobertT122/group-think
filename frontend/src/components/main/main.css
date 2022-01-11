@@ -21,10 +21,11 @@
 }
 
 .profile-right {
+    margin-top: 6vh;
     margin-left: 78%;
     display: flex;
     width: 20%;
-    height: 1000px;
+    height: 100vh;
     flex-wrap: wrap;
     position: fixed;
     

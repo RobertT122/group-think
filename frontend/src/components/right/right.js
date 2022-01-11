@@ -1,13 +1,13 @@
 import React from 'react';
 import { useHistory } from 'react-router';
-
 import './right.css';
+// import AnswerIndexContainer from '../answers/answer_index_container';
 
-export default (props) => {
+const Right = (props) => {
+// export default (props) => {
 
-    const { openModal, openMain, currentUser } = props;
+    // const { openModal, openMain, currentUser } = props;
     
-    //need a way to access the current user's past responses and delta points 
     let history = useHistory()
 
     return (
@@ -15,8 +15,9 @@ export default (props) => {
             <div className='ans-questions-container'>
                 <button className='ans-questions-btn' onClick={() => history.push('/answers')}>Answer Questions</button>
             </div>
-            
         </div>
     )
 
 }
+
+export default Right

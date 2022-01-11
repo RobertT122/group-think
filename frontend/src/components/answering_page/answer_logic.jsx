@@ -1,12 +1,15 @@
 import React from "react"
 import { useState } from "react"
 import { useEffect } from "react"
+
 import Loading from "./loading"
 import ReadingContainer from './reading_container'
 import AnsweringContainer from './answering_container'
 import DoneContainer from "./done_container"
+
 import { connect } from "react-redux"
 import { fetchNextQuestion } from "../../actions/question_actions"
+import NoQuestions from "./no_questions"
 
 const AnswerLogic = (props) => {
   const initialState={time: 0, frame: 0}
@@ -17,8 +20,8 @@ const AnswerLogic = (props) => {
 
   // fetches question and starts timer
   useEffect(() => {
-    console.log(props.questionArr)
     props.fetchNextQuestion().then(startTimer)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const startTimer = () => {
@@ -28,10 +31,9 @@ const AnswerLogic = (props) => {
   //increments timer and sets a frame to control what components are displayed
   useEffect(() => {
     if(!timerReady){
-      console.log("content not loaded")
-    } else {
+      //constent not loaded
+    } else if (props.question){
       setAnswer((prev) => Object.assign({},prev,{question_id: props.question._id}))
-      console.log("content loaded")
       const interval = setInterval(() => {
         setState(state=> {
           if (state.time > 1){
@@ -39,7 +41,7 @@ const AnswerLogic = (props) => {
           }
           switch(state.frame){
             case 1:
-              return {time: 40, frame: 2};
+              return {time: 50, frame: 2};
             case 2:
               return {time: 0, frame: 3}
             default:
@@ -48,7 +50,10 @@ const AnswerLogic = (props) => {
           }
         })
       }, 100);
+    } else {
+      setState({time:0, frame: 4})
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [timerReady]);
   
   const setInput = (bool) => {
@@ -56,25 +61,24 @@ const AnswerLogic = (props) => {
     setAnswer((prev) => Object.assign({}, prev, {input: bool, weight: state.time}))
   }
 
+
   const frameComponent = () => {
     switch(state.frame){
       case 1:
-        return <ReadingContainer time={state.time} question={props.question}/>
+        return <ReadingContainer time={state.time} question={props.question} /> 
       case 2:
-        return <AnsweringContainer time={state.time}  setInput={setInput} question={props.question}/> //yes
+        return <AnsweringContainer time={state.time}  setInput={setInput} question={props.question}/> 
       case 3:
-        //On componenet did mount set the submit the answer
-        //Will need to add the dispatch for the answer
-        return <DoneContainer question={props.question} answer={answer}/>
+        return <DoneContainer question={props.question} answer={answer}/> 
+      case 4:
+        return <NoQuestions /> 
       default:
-        return <Loading />
+        return <Loading /> 
     }
   }
 
   return(
     <div>
-
-      <h2 className='timer'>{state.time/10} : {state.frame}</h2>
       {frameComponent()}
 
       {/* {(state.done)? <button onClick={resetTimer}>reset</button>: <></>} */}

@@ -17,7 +17,7 @@ class LoginForm extends React.Component {
   }
 
   // Once the user has been authenticated, redirect to the Home page
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps.currentUser === true) {
       this.props.history.push('/questions');
     }

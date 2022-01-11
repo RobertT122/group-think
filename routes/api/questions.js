@@ -11,8 +11,6 @@ const validateQuestionInput = require('../../validation/question');
 
 
 router.get('/next', passport.authenticate('jwt', { session: false }), (req, res) => {
-  console.log("searching")
-  console.log(req.user._id)
   //correctly grabs the answers that user has gotten
   Answer.find({user: req.user})
     .then(answers => {

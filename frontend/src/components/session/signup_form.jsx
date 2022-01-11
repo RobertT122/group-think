@@ -19,7 +19,7 @@ class SignupForm extends React.Component {
     this.clearedErrors = false;
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps.signedIn === true) {
       this.props.history.push('/login');
     }
@@ -43,14 +43,19 @@ class SignupForm extends React.Component {
       password2: this.state.password2
     };
 
-    this.props.signup(user, this.props.history); 
+    let signin = {
+      email: this.state.email,
+      password: this.state.password
+    };
+
+    this.props.signup(user, this.props.history)
   }
 
   renderErrors() {
     return(
       <ul>
         {Object.keys(this.state.errors).map((error, i) => (
-          <li key={`error-${i}`}>
+          <li className="signup-errors" key={`error-${i}`}>
             {this.state.errors[error]}
           </li>
         ))}
