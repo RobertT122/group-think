@@ -4,6 +4,21 @@ a{
   text-decoration: none;
 }
 
+.question-chart{
+  border: 1px solid lightgray;
+  box-shadow: -3px 7px 9px -1px rgb(0 0 0 / 60%);
+  border-radius: 5px;
+  background-color: snow;
+  opacity: 95%;
+}
+
+.text-holder{
+  border-radius: 5px;
+  background-color: rgb(248,248,255, 0.75);
+  box-shadow: -3px 7px 9px -1px rgb(0 0 0 / 60%);
+  opacity: 95%;
+}
+
 .flex {
   display: flex;
   padding-bottom: 200px;
@@ -71,4 +86,37 @@ ul {
 li{
   padding-left: 15px;
   padding-right: 15px;
+}
+
+.section2-image{
+  max-width: 500px;
+  opacity: 75%;
+  border-radius: 5px;
+  box-shadow: -3px 7px 9px -1px rgb(0 0 0 / 60%);
+}
+
+.footer{
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20px;
+  z-index: 3;
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  box-shadow: -3px 7px 9px -1px rgb(0 0 0 / 60%);
+  width: 220px;
+  height: 50px;
+  margin-right: 30px;
+  align-items: center;
+  padding: 15px;
+  position: relative;
+}
+
+.score > p {
+  color: lightgreen;
 }

@@ -4,6 +4,8 @@ import "./splash.css"
 import Skyline from "../svgs/skyLine.svg"
 import Eye from "../svgs/eye.svg"
 import groupThink from "../svgs/groupThinkLogo.svg"
+import Answer from "../svgs/answers.png"
+import { Bar } from "react-chartjs-2"
 
 class SplashPage extends React.Component {
 
@@ -48,30 +50,60 @@ class SplashPage extends React.Component {
           <img src={Skyline} className="cityskyline-photo" alt="skyline"/>
         </div>
         <div className="section1 flex">
-          <img className="section1-image" alt="Question"/>
+        <div className='question-chart'>
+                <Bar 
+                    data={{
+                        datasets: [{
+                            label: 'Yes',
+                            data: [15],
+                            borderColor: 'rgba(80, 39, 245, 1)',
+                            backgroundColor: 'rgba(80, 39, 245, 0.2)',
+                            borderWidth: 1
+                        }, {
+                            label: 'No',
+                            data: [8],
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                            borderWidth: 1
+                        }],
+                        labels: ['']
+                    }}
+                    options= {{
+                                scale: {
+                                    ticks: {
+                                        precision: 0
+                                    }
+                                }
+                             }}
+                />
+            </div>
           <div className="text-holder">
           <h2>Ask your questions to the masses</h2>
-          <p>Questions delivered in order of submission to the prolls for rapid responses.</p>
+          <p>Questions delivered in order of submission<br/> to the prolls for rapid responses. The Ministry<br/> would like all citizens to strive for accuracy and speed.</p>
           </div>
         </div>
         <div className="section2 flex">
         <div className="text-holder">
           <h2>Answer your fellow mans questions</h2>
-          <p>Your answer is timed to create quick thinking and show if you can answer in
-          the same manner as others.</p>
-          </div>
-          <img className="section2-image" alt="Answer"/>
+          <p>Be Quick! Your answer is timed to show quick thinking.<br/>
+          In your haste be sure you still keep groupThink in mind,<br/> wouldn't want to dissapoint Big Brother.</p>
+        </div>
+        <img src={Answer} className="section2-image"/>
         </div>
         <div className="section3 flex">
-          <img className="section3-image" alt="Score"/>
+          <div className='score flex'><p>1984<br/></p><span>Ministry Approved</span></div>
           <div className="text-holder">
           <h2>Show off your devotion to groupThink</h2>
           <p>
-            Earn a score based on how fast you answer and if you are in line with the majority
-            of other answers.
+            After answering questions the Ministry of Truth<br/>
+            will assign you a score based on your speed and groupThink.<br/>
+            Just remember, failure to groupThink will reflect poorly on your score.
           </p>
           </div>
         </div>
+          <div className="footer">
+            <h1>And remember IGNORANCE IS STRENGTH</h1>
+          </div>
       </div>
     )
   }
