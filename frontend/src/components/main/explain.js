@@ -1,6 +1,9 @@
 import React from 'react'
 import '../modal/modal.css'
 import { ReactComponent as Logo } from '../svgs/groupThinkLogo.svg';
+import { ReactComponent as SkyLine } from '../svgs/skyLine.svg';
+import {ReactComponent as Eye} from '../svgs/eye.svg';
+import '../svgs/eye.css'
 
 export default function Tutorial() {
     return (
@@ -8,8 +11,11 @@ export default function Tutorial() {
             <div className='modal-header'>
                 Welcome to GroupThink
             </div>
-            <div className='logo-container'>
-            
+            <div className='eye-container'>
+                <Eye />
+            </div>
+            <div className='skyline-container'>
+                <SkyLine />
             </div>
             <div className='brief-container'>The following is a tutorial to guide our new users through the GroupThink experience</div>
             <div className='explain-profile-container'>
@@ -45,9 +51,10 @@ export default function Tutorial() {
                     alt="" 
                 />
                 <p className='explain-txt'>
-                    The answering button will redirect you to the answering page, where you will answer others' questions. Please answer carefully. Big brother is watching.  
+                    The answering button will redirect you to the answering page, where you will answer others' questions under a time constraint. Please answer carefully. Big brother is watching.  
                 </p>
             </div>
+            
         </div>
     )
 }

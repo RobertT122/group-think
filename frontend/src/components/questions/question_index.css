@@ -229,4 +229,19 @@ div .fas.fa-question {
     color: red;
 }
 
+.eye-container #eye-svg {
+    position: absolute;
+    width: 25%;
+    left: 37%;
+    top: -15%;
+    z-index: 99;
+}
 
+.skyline-container {
+    width: 100%;
+}
+
+.skyline-container svg{
+    z-index: 100; 
+    width: 100%;
+}
