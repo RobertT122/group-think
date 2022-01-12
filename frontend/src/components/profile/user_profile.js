@@ -37,11 +37,14 @@
     }
 
     render() {
-        const { currentUser, score } = this.props;
+        const { currentUser, score, openModal } = this.props;
         return (
             <div className='user-profile-container'>
                 <div className={!this.state.show ? 'hide' : 'show-score-exp'} >
                     The GroupThink score (-1984, 1984) represents how a user has answered in comparison to others. A high score means a user thinks like others and vice-versa. 
+                </div>
+                <div className='tutorial-container'>
+                    <button onClick={() => openModal('tutorial')} className='tutorial-btn'> Tutorial</button>
                 </div>
                 <div className='user-image-container'>
                     <img className='user-image-profile' src="https://www.pinclipart.com/picdir/middle/355-3553881_stockvader-predicted-adig-user-profile-icon-png-clipart.png" alt="" />

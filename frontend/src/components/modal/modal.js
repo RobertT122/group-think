@@ -1,7 +1,8 @@
 import React from 'react'
-import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-import './modal.css'; //styling the elements in the render function
+import { closeModal } from '../../actions/modal_actions';
+import Tutorial from '../main/explain';
+import './modal.css'; 
 
 function Modal( {modal, closeModal} ) { 
     if (!modal) { 
@@ -10,14 +11,8 @@ function Modal( {modal, closeModal} ) {
 
     let component; 
     switch (modal) {
-        case 'example1':
-            component = <Component />
-            break; 
-        case 'example2':
-            component = <Component />
-            break; 
-        case 'example3':
-            component = <Component />
+        case 'tutorial':
+            component = <Tutorial />
             break;
         default:
            return null;

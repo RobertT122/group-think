@@ -1,3 +1,5 @@
+@import url('../../util/reset.css');
+
 .modal-background {
    position: fixed;
    top: 0;
@@ -5,16 +7,66 @@
    right: 0;
    left: 0;
    background: rgba(0, 0, 0, 0.5);
-   z-index: 10;
+   z-index: 100;
  }
 
- .modal-child-example {
+ .modal-child-tutorial {
    position: absolute;
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%);
-   width: 480px;
-   height: 750px; 
+   background-color: white;
+   height: 95vh;
+   width: 50vw;
    display: flex;
    justify-content: center;
+   border: 1px solid lightgrey;
+   border-radius: 5px;
  }
+
+.modal-tutorial-container {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow-y: auto;
+}
+
+.modal-header {
+  font-family: 'Playfair Display', serif;
+  font-size: 27px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.brief-container {
+  width: 100%;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+}
+
+.explain-profile-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+  height: fit-content;
+  margin-top: 30px;
+}
+
+.explain-profile-container img {
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+}
+
+.explain-txt {
+  width: 100%;
+  text-align: center;
+  font-family: 'Outfit', serif;
+  font-size: 18px;
+  margin-top: 10px;
+}

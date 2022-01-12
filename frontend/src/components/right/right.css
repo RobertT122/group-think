@@ -45,3 +45,10 @@
 }
 
 /* answer index styles */
+
+/* eye styling and placement */
+#eye-svg  {
+    position: absolute;
+    top: -10%;
+    width: 80%;
+}
