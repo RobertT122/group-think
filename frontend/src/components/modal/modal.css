@@ -1,4 +1,5 @@
 @import url('../../util/reset.css');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Merriweather&family=Mukta:wght@300&family=Open+Sans:wght@300&family=Playfair+Display&family=Raleway:wght@200;300;400&family=Roboto:wght@300;500&display=swap');
 
 .modal-background {
    position: fixed;
@@ -17,7 +18,7 @@
    transform: translate(-50%, -50%);
    background-color: white;
    height: 95vh;
-   width: 50vw;
+   width: 60vw;
    display: flex;
    justify-content: center;
    border: 1px solid lightgrey;
@@ -36,7 +37,8 @@
 
 .modal-header {
   font-family: 'Playfair Display', serif;
-  font-size: 30px;
+  font-weight: 300;
+  font-size: 33px;
   width: 100%;
   text-align: center;
   margin-bottom: 32px;
@@ -46,8 +48,9 @@
   width: 100%;
   text-align: center;
   font-family: 'Playfair Display', serif;
-  font-size: 23px;
+  font-size: 20px;
   margin-top: -50px;
+  font-weight: 400;
 }
 
 .explain-profile-container {
@@ -67,7 +70,7 @@
 .explain-txt {
   width: 100%;
   text-align: center;
-  font-family: 'Outfit', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 18px;
   margin-top: 10px;
 }
