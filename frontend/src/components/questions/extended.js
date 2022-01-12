@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
-import { Bar } from 'react-chartjs-2'
+import { Bar, Pie } from 'react-chartjs-2'
 import Chart from 'chart.js/auto'
 
-export default class Extended extends Component {
-
-    render() {
-        const { question } = this.props;
+const Extended   = ({question}) => {
         
         return (
             <div className='extended-container'>
-                <Bar 
+                {/* <Bar 
                     data={{
                         datasets: [{
                             label: 'Yes',
@@ -33,8 +30,32 @@ export default class Extended extends Component {
                                     }
                                 }
                              }}
+                /> */}
+                <Pie
+                    data={{
+                        labels: [
+                            'Yes',
+                            'No',
+                            ],
+                        datasets: [{
+                            label: '',
+                            data: [question.yes, question.no],
+                            backgroundColor: [
+                                'rgba(170, 211, 224, 0.8)',
+                                'rgba(120, 80, 100, 0.5)'
+                            ],
+                            borderColor: [
+                                'rgba(97, 133, 144, 1)',
+                                'rgba(120, 100, 100, 1)'
+                            ],
+                            hoverOffset: 4
+                        }]
+                    }}
                 />
+                <button className='toggle-extended'> Extended Info</button>
+
             </div>
         )
-    }
 }
+
+export default Extended

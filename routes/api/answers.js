@@ -19,15 +19,18 @@ router.get('/user/:user_id', passport.authenticate('jwt', { session: false }), (
 });
 
 // by question
-router.get('/question/:question_id', (req, res) => {
-    Answer.find({user: req.params.question_id})
-    //unsure why we are comparing the user key to the question_id
+router.get('/question/:question_id', passport.authenticate('jwt', { session: false }), (req, res) => {
+  console.log(req.params.question_id)
+  let id = mongoose.Types.ObjectId(req.params.question_id)
+  Question.findById(id).then(question =>
+    Answer.find({question})
+
         .sort({ date: -1 })
         .then(answers => res.json(answers))
         .catch(err =>
             res.status(404).json({ noanswersfound: 'No answers found for that question' }
         )
-    );
+    ));
 });
 
 
