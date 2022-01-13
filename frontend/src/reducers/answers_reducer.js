@@ -7,7 +7,7 @@ export default function AnswersReducer(state = defaultState, action) {
     let newState = Object.assign({}, state); 
     switch(action.type) {
       case RECEIVE_QUESTION_ANSWERS:
-        newState.question = action.answers.data;
+        newState.question[action.id] = action.answers.data;
         return newState;
       case RECEIVE_USER_ANSWERS:
         newState.user = action.answers.data;
