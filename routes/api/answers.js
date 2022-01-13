@@ -20,12 +20,8 @@ router.get('/user/:user_id', passport.authenticate('jwt', { session: false }), (
 
 // by question
 router.get('/question/:question_id', passport.authenticate('jwt', { session: false }), (req, res) => {
-<<<<<<< HEAD
-
-=======
   let id = mongoose.Types.ObjectId(req.params.question_id)
   Question.findById(id).then(question =>
->>>>>>> questions-extended
     Answer.find({question})
 
         .sort({ date: -1 })

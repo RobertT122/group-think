@@ -41,12 +41,7 @@ export default class QuestionIndexItem extends Component {
                 <div onClick={this.handleDelete.bind(this)} className='close-x'>X</div>
                 <div className='question-body'>{question.text}</div>
                 { question.active ? <button onClick={this.onClick} className='toggle-active-btn'>Close</button> : "" }
-<<<<<<< HEAD
-                { question.active ? <div onMouseLeave={this.toggleShow} onMouseEnter={this.toggleShow} className='question-mark-container-close'><i className="fas fa-question"></i></div> : "" }
-                { question.active ? "" : <ExtendedContainer question={question} />}
-=======
                 { question.active ? "" : <ExtendedContainer question={question} reactivate = {() => this.props.reactivate(this.props.question._id)}/>}
->>>>>>> questions-extended
                 { question.active ? "" : <button onClick={this.handleReactivate.bind(this)} className='reactivate-btn'>Open</button> }
 
             </div>
