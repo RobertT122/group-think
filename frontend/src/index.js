@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const currentTime = Date.now() / 1000;
     
-    window.getQuestionAnswers = (id) => fetchQuestionAnswers(id)
+    window.getQuestionAnswers = (id) => store.dispatch(fetchQuestionAnswers(id))
     // If the user's token has expired
     if (decodedUser.exp < currentTime) {
       // Logout the user and redirect to the login page

@@ -5,9 +5,10 @@ export const RECEIVE_USER_ANSWERS = 'RECEIVE_USER_ANSWERS';
 export const RECEIVE_NEW_ANSWER = 'RECEIVE_NEW_ANSWER';
 
 //grabbing the answers for a particular question
-export const receiveQuestionAnswers = answers => ({
+export const receiveQuestionAnswers = (answers, id) => ({
     type: RECEIVE_QUESTION_ANSWERS,
-    answers
+    answers,
+    id
 })
 
 //will be necessary for the user answers index page 
@@ -40,6 +41,6 @@ export const fetchUserAnswers = id => dispatch => (
 
 export const fetchQuestionAnswers = id => dispatch => (
     getQuestionAnswers(id)
-        .then(answers => dispatch(receiveQuestionAnswers(answers)))
+        .then(answers => dispatch(receiveQuestionAnswers(answers, id)))
         .catch(err => console.log(err))
 )

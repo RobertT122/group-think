@@ -20,7 +20,6 @@ router.get('/user/:user_id', passport.authenticate('jwt', { session: false }), (
 
 // by question
 router.get('/question/:question_id', passport.authenticate('jwt', { session: false }), (req, res) => {
-  console.log(req.params.question_id)
   let id = mongoose.Types.ObjectId(req.params.question_id)
   Question.findById(id).then(question =>
     Answer.find({question})
