@@ -5,7 +5,6 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 
 const Extended   = ({question, jobStats, ...props}) => {
-    console.log(jobStats)
     let [chart, setChart] = useState("pie")
 
     useEffect(() => props.fetchQuestionAnswers(question._id), [])
@@ -74,13 +73,16 @@ const Extended   = ({question, jobStats, ...props}) => {
     
     );
 
+    console.log(Object.keys(jobStats))
+    console.log(Object.values(jobStats).map(obj => obj['no']))
+
     const renderRadar = () => (
         <div>
             <Radar
                  data={{
                      labels: Object.keys(jobStats),
                      datasets: [{
-                         label: 'Nos',
+                         label: 'No',
                          data: Object.values(jobStats).map(obj => obj['no']),
                          fill: true,
                          backgroundColor: 'rgba(255, 99, 132, 0.2)',
@@ -90,7 +92,7 @@ const Extended   = ({question, jobStats, ...props}) => {
                          pointHoverBackgroundColor: '#fff',
                          pointHoverBorderColor: 'rgb(255, 99, 132)'
                     },{
-                        labels: 'Yeses',
+                        label: 'Yes',
                         data: Object.values(jobStats).map(obj => obj['yes']),
                         fill: true,
                         backgroundColor: 'rgba(54, 162, 235, 0.2)',
