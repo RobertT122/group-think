@@ -32,7 +32,7 @@ export default class QuestionIndexItem extends Component {
 
                 <div className='question-body'>{question.text}</div>
                 { question.active ? <button onClick={this.onClick} className='toggle-active-btn'>Close</button> : "" }
-                { question.active ? "" : <ExtendedContainer question={question} />}
+                { question.active ? "" : <ExtendedContainer question={question} reactivate = {() => this.props.reactivate(this.props.question._id)}/>}
                 { question.active ? "" : <button onClick={this.handleReactivate.bind(this)} className='reactivate-btn'>Open</button> }
 
             </div>
