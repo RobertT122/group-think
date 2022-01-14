@@ -2,7 +2,8 @@ import React from 'react';
 import UserProfileContainer from '../profile/user_profile_container';
 import QuestionIndexContainer from '../questions/question_index_container';
 import RightContainer from '../right/right_container';
-import NavBarContainer from '../nav/navbar_container'
+import NavBarContainer from '../nav/navbar_container';
+import Modal from '../modal/modal';
 import './main.css';
 
 class MainPage extends React.Component {
@@ -47,10 +48,11 @@ class MainPage extends React.Component {
       return <img className='main-page-photo' src="https://images.unsplash.com/photo-1621968859049-d09c5f0f86eb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjh8fGFlc3RoZXRpY3xlbnwwfDB8MHx3aGl0ZXw%3D&auto=format&fit=crop&w=900&q=60" alt="" />
     }
   }
-
+ 
   render() {
     return (
       <div className='main-page-container'>
+        <Modal />
         <NavBarContainer />
         <div className='background-photo'>
           <img className='main-page-photo' src="https://i.pinimg.com/originals/25/c8/5a/25c85ad9cde83d7c0c5e347fea5c8789.jpg" alt="" />

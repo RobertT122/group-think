@@ -20,7 +20,8 @@ router.get('/user/:user_id', passport.authenticate('jwt', { session: false }), (
 
 // by question
 router.get('/question/:question_id', passport.authenticate('jwt', { session: false }), (req, res) => {
-
+  let id = mongoose.Types.ObjectId(req.params.question_id)
+  Question.findById(id).then(question =>
     Answer.find({question})
 
         .sort({ date: -1 })
@@ -28,7 +29,7 @@ router.get('/question/:question_id', passport.authenticate('jwt', { session: fal
         .catch(err =>
             res.status(404).json({ noanswersfound: 'No answers found for that question' }
         )
-    );
+    ));
 });
 
 

@@ -1,23 +1,35 @@
 import React from 'react';
-import { useHistory } from 'react-router';
+import { withRouter } from 'react-router';
 import './right.css';
-// import AnswerIndexContainer from '../answers/answer_index_container';
+import {ReactComponent as Eye} from '../svgs/eye.svg'
+import '../svgs/eye.css'
 
-const Right = (props) => {
-// export default (props) => {
+class Right extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = { show: false }
+        this.toggleShow = this.toggleShow.bind(this)
+    }
 
-    // const { openModal, openMain, currentUser } = props;
-    
-    let history = useHistory()
-
-    return (
-        <div className='right-bar-container'>
-            <div className='ans-questions-container'>
-                <button className='ans-questions-btn' onClick={() => history.push('/answers')}>Answer Questions</button>
+    toggleShow() {
+        const bool = !this.state.show;
+        this.setState({ show: bool })
+    }
+    render() {  
+        return (
+            <div className='right-bar-container'>
+                <Eye />     
+                <div className='ans-questions-container'>
+                    <button className='ans-questions-btn' onClick={() => this.props.history.push('/answers')}>Answer Questions</button>
+                </div>
             </div>
-        </div>
-    )
-
+        )
+    }
 }
 
-export default Right
+
+
+    
+
+
+export default withRouter(Right);

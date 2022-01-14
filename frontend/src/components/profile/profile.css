@@ -6,12 +6,13 @@
 
 .user-profile-container {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     height: fit-content;
     align-items: center;
     margin-bottom: 10px;
-    margin-left: 30%;
+    /* margin-left: 30%; */
     margin-top: 10px;
+    width: 100%;
 }
 
 .user-image-container {
@@ -92,6 +93,10 @@
     display: none;
 }
 
+.group-think-score-container .fas.fa-question {
+    color: black;
+}
+
 .show-score-exp {
     position: absolute;
     top: 1vh;
@@ -104,4 +109,30 @@
     border: 1px solid lightgray;
     border-radius: 5px;
     box-shadow: -3px 7px 9px -1px rgb(0 0 0 / 60%);
+}
+
+.tutorial-container {
+    margin-right: 15%;
+}
+
+.tutorial-btn {
+    font-family: 'Outfit', serif;
+    height: 50px;
+    width: 150px;
+    padding: 5px;
+    margin: 10px;
+    border: 1px solid var(--testingcolor);
+    border-radius: 5px;
+    background: var(--testingcolor);
+    color: white;
+    box-shadow: -3px 7px 9px -1px rgb(0 0 0 / 60%);
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 15%;
+}
+
+.tutorial-btn:hover {
+    background: rgb(90, 103, 116);
+    border: 1px solid rgb(90, 103, 116);
+    
 }

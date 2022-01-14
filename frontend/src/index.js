@@ -5,10 +5,10 @@ import configureStore from './store/store';
 import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
+import {fetchQuestionAnswers} from './actions/answers_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
-
   // If a returning user has a session token stored in localStorage
   if (localStorage.jwtToken) {
 
@@ -24,7 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore(preloadedState);
 
     const currentTime = Date.now() / 1000;
-
+    
+    window.getQuestionAnswers = (id) => store.dispatch(fetchQuestionAnswers(id))
     // If the user's token has expired
     if (decodedUser.exp < currentTime) {
       // Logout the user and redirect to the login page
@@ -36,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore({});
     window.state = store.getState();
   }
+
   // Render our root component and pass in the store as a prop
   const root = document.getElementById('root');
 
