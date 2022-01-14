@@ -1,6 +1,7 @@
 import React from 'react';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Switch } from 'react-router-dom';
+import { Route } from "react-router";
 
 import SplashPageContainer from './splash_page/splash_container'
 import MainPageContainer from './main/main_page_container';
@@ -16,9 +17,9 @@ const App = () => (
         <ProtectedRoute exact path='/index' component={QuestionIndexContainer} />
         <ProtectedRoute exact path="/" component={MainPageContainer} />
         <ProtectedRoute exact path="/answers" component={AnswerLogic}/>
-        <AuthRoute exact path="/splash" component={SplashPageContainer} />
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
+        <Route exact path="/splash" component={SplashPageContainer} />
     </Switch>
   </div>
 );
