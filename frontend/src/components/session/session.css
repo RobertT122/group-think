@@ -114,18 +114,22 @@ button:hover{
   width: 100vw;
   height: 6vh;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
-  background-color: white;
 }
 
 .logout-btn {
   width: 80px;
   height: 30px;
-  border: 1px solid lightgray;
+  border: 1px solid lightslategray;
   border-radius: 5px;
+  background-color: lightslategray;
+  color: white;
+  box-shadow: -3px 7px 9px -1px rgb(0 0 0 / 60%);
   cursor: pointer;
-  margin-right: 30px;
+  font-family: 'Outfit', serif;
+  margin-left: 30px;
+
 }
 
 .main-page-photo {

@@ -9,10 +9,10 @@ const Extended   = ({question, jobStats, ...props}) => {
 
     useEffect(() => props.fetchQuestionAnswers(question._id), [])
 
-    const chartButton = name => <button onClick ={() => setChart(name)} className="chartButton">{name.toUpperCase()}</button>
+    const chartButton = name => <button onClick ={() => setChart(name)} className="chartButton">{name[0].toUpperCase()  + name.slice(1, name.length)}</button>
 
     const renderBasicPie = () => (
-        <div>
+        <div className='pie-chart-container'>
         <Pie
             data={{
                 labels: [
@@ -23,12 +23,12 @@ const Extended   = ({question, jobStats, ...props}) => {
                     label: '',
                     data: [question.yes, question.no],
                     backgroundColor: [
-                        'rgba(170, 211, 224, 0.8)',
-                        'rgba(120, 80, 100, 0.5)'
+                        'rgba(128, 183, 222, 0.44)',
+                        'rgba(165, 163, 238, 0.8)'
                     ],
                     borderColor: [
-                        'rgba(97, 133, 144, 1)',
-                        'rgba(120, 100, 100, 1)'
+                        'rgba(128, 183, 222, 0.44)',
+                        'rgba(165, 163, 238, 0.8)'
                     ],
                     hoverOffset: 4
                 }]
@@ -41,7 +41,7 @@ const Extended   = ({question, jobStats, ...props}) => {
     )
 
     const renderBasicBar = () => (
-        <div>
+        <div className='bar-chart-container'>
             <Bar 
             data={{
                 datasets: [{
@@ -77,7 +77,7 @@ const Extended   = ({question, jobStats, ...props}) => {
     console.log(Object.values(jobStats).map(obj => obj['no']))
 
     const renderRadar = () => (
-        <div>
+        <div className='radar-chart-container'>
             <Radar
                  data={{
                      labels: Object.keys(jobStats),
@@ -108,7 +108,12 @@ const Extended   = ({question, jobStats, ...props}) => {
                      line: {
                        borderWidth: 3
                      }
-                   }
+                   },
+                   scale: {
+                            ticks: {
+                                precision: 0
+                            }
+                        }
                 }}
             />
             {chartButton('pie')}

@@ -42,6 +42,7 @@
     /* background-color: var(--testingcolor); */
     color: black;
     font-family: "Playfair Display", serif;
+    z-index: 999;
 }
 
 /* answer index styles */
