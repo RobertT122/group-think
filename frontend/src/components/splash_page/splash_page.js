@@ -12,12 +12,14 @@ class SplashPage extends React.Component {
     return (
       <div className="splash-page-container">
         <div className="header-container">
-            <groupThink />
+            <img className="splash-logo" src="https://lh3.googleusercontent.com/V_TKf5hQ-FFx93jAtR0jS140L6hNVO5-PgApJ3lwB4EVnw-QnEBrelVHf54BRWEtewMlqEJya0TO9h5YMlrTHFDlVNEXzkUCR-IrJUd1Kymgzx4UWqvqTF0fvUxUVRQcaiPPTTTASw=w2400" alt="" />
             <a href="https://www.linkedin.com/in/robert-tetrault-28ba4b218/">Robert</a>
             <a href="https://www.linkedin.com/in/jacky-chen6825">Jacky</a>
             <a href="https://www.linkedin.com/in/liam-williams-76035613a/">Liam</a>
             <Link className="login-btn" to={'/login'} >Login</Link>
         </div>
+
+        
       </div>
     )
   }
