@@ -1,122 +1,34 @@
-@import '../../util/reset.css';
-
-a{
-  text-decoration: none;
+@import url(../../util/reset.css);
+.splash-page-container {
+  width: 100vw;
+  height: 100vh;
 }
 
-.question-chart{
-  border: 1px solid lightgray;
-  box-shadow: -3px 7px 9px -1px rgb(0 0 0 / 60%);
-  border-radius: 5px;
-  background-color: snow;
-  opacity: 95%;
-}
-
-.text-holder{
-  border-radius: 5px;
-  background-color: rgb(248,248,255, 0.75);
-  box-shadow: -3px 7px 9px -1px rgb(0 0 0 / 60%);
-  opacity: 95%;
-}
-
-.flex {
+.header-container {
+  height: 6vh;
+  width: 100vw;
+  background-color: aliceblue;
   display: flex;
-  padding-bottom: 200px;
-  justify-content: center;
-  z-index: 2;
-}
-
-.front-logo{
-  max-width: 70px;
-}
-
-.front{
-  position: relative;
-  padding: 0;
-  flex-direction: column;
-  margin-left: auto;
-  margin-right: auto;
-  z-index: 3;
-}
-
-.front > h1{
-  text-align: center;
-  font-size: 50px;
-}
-
-.front > p{
-  font-size: 20px;
-}
-
-.cityskyline-photo{
-  position: absolute;
-  z-index: 1;
-  bottom: 0;
-  width: 100%;
-}
-
-.brother-eye{
-  position: sticky;
-  margin-left: auto;
-  margin-right: auto;
-  top: 10vh;
-  z-index: 0;
-  opacity: 75%;
-}
-
-.splash-page-container{
-  flex-direction: column;
-}
-
-.splash-links, .section1, .section2, .section3{
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-.splash-links{
   justify-content: space-evenly;
-}
-
-ul {
-  display: flex;
-  flex-direction: row;
-  list-style: none;
-}
-
-li{
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-.section2-image{
-  max-width: 500px;
-  opacity: 75%;
-  border-radius: 5px;
-  box-shadow: -3px 7px 9px -1px rgb(0 0 0 / 60%);
-}
-
-.footer{
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 20px;
-  z-index: 3;
-}
-
-.score {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border: 1px solid lightgray;
-  border-radius: 5px;
-  box-shadow: -3px 7px 9px -1px rgb(0 0 0 / 60%);
-  width: 220px;
-  height: 50px;
-  margin-right: 30px;
   align-items: center;
-  padding: 15px;
-  position: relative;
 }
 
-.score > p {
-  color: lightgreen;
+.header-container a {
+  text-decoration: none;
+  font-family: 'Outfit';
+  font-weight: bold;
+  font-size: 18px;
+  color: black;
+}
+
+.header-container .login-btn {
+  height: 60%;
+  background-color: white;
+  border: 1px solid white;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 10%;
+  text-align: center;
+  align-items: center;
+  display: flex;
 }
