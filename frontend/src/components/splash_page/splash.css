@@ -1,4 +1,6 @@
 @import url(../../util/reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Caveat&family=Merriweather&family=Mukta:wght@300&family=Open+Sans:wght@300&family=Playfair+Display&family=Raleway:wght@200;300;400&family=Roboto:wght@300;500&display=swap');
+
 .splash-page-container {
   width: 100vw;
   height: 100vh;
@@ -7,7 +9,7 @@
 .header-container {
   height: 6vh;
   width: 100vw;
-  background-color: aliceblue;
+  background-color: darkgrey;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -17,23 +19,64 @@
   text-decoration: none;
   font-family: 'Outfit';
   font-weight: bold;
-  font-size: 18px;
-  color: black;
+  font-size: 20px;
+  color: white;
 }
 
-.header-container .login-btn {
+.links-container .login-btn {
   height: 60%;
   background-color: white;
-  border: 1px solid white;
-  padding-left: 20px;
-  padding-right: 20px;
-  border-radius: 10%;
+  border: 1px solid black;
   text-align: center;
   align-items: center;
   display: flex;
+  border-radius: 40px;
+  font-size: 16px;
+  padding: 7px 16px;
+  color: black;
 }
 
 .splash-logo {
   height: 70%;
+}
 
+.links-container {
+  height: 100%;
+  width: 15%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.splash-main-text {
+  position: absolute;
+  top: 20vh;
+  width: 100vw;
+  height: 40vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.splash-header {
+  font-family: 'Acme', serif;
+  font-size: 50px;
+}
+
+.splash-body {
+  padding: 0px 20% 0px 20%;
+  font-family: 'Outfit', serif;
+  font-size: 18px;
+  height: 45%;
+}
+
+.splash-body-container {
+  height: 80vh;
+  width: 100vw;
+}
+
+.splash-skyline-container {
+  position: absolute;
+  bottom: 0px;
 }
