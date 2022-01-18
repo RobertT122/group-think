@@ -22,8 +22,8 @@ class SplashPage extends React.Component {
             </div>
         </div>
         <div className="splash-main-text">
-          <div className="splash-header">Imagine a place...</div>
-          <div className="splash-body">...where you can belong to a worldwide community of decision-makers. Where anyone who's having trouble deciding can leverage the collective intellect of the community to optimize their everyday decisions. A place, however, where decision-making is centralized and transparent to the authorities.</div>
+          <div className="splash-header">Inspired by Orwell's 1984...</div>
+          <div className="splash-body">...here's where you can belong to a worldwide community of decision-makers. Where anyone who's having trouble deciding can leverage the collective intellect of the community to optimize their everyday decisions. A place, however, where decision-making is centralized and transparent to the authorities.</div>
         </div>
         <div className="splash-skyline-container">
           <img src={Skyline} className="cityskyline-photo" alt="skyline"/>

@@ -21,10 +21,12 @@
   font-weight: bold;
   font-size: 20px;
   color: white;
+  transition: font-size 1s;
 }
 
 .linkedin-links:hover {
   text-decoration: underline;
+  font-size: 22px;
 }
 
 .links-container .login-btn {

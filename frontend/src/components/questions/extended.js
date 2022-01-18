@@ -24,11 +24,11 @@ const Extended   = ({question, jobStats, ...props}) => {
                     data: [question.yes, question.no],
                     backgroundColor: [
                         'rgba(128, 183, 222, 0.44)',
-                        'rgba(165, 163, 238, 0.8)'
+                        'rgba(255, 99, 132, 0.2)'
                     ],
                     borderColor: [
                         'rgba(128, 183, 222, 0.44)',
-                        'rgba(165, 163, 238, 0.8)'
+                        'rgb(255, 99, 132)'
                     ],
                     hoverOffset: 4
                 }]
@@ -47,14 +47,14 @@ const Extended   = ({question, jobStats, ...props}) => {
                 datasets: [{
                     label: 'Yes',
                     data: [question.yes],
-                    borderColor: 'rgba(80, 39, 245, 0.5)',
-                    backgroundColor: 'rgba(80, 39, 245, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 0.5)',
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
                     borderWidth: 1
                 }, {
                     label: 'No',
                     data: [question.no],
-                    borderColor: 'rgba(54, 162, 235, 0.5)',
-                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgb(255, 99, 132)',
                     borderWidth: 1
                 }],
                 labels: ['']
@@ -73,8 +73,8 @@ const Extended   = ({question, jobStats, ...props}) => {
     
     );
 
-    console.log(Object.keys(jobStats))
-    console.log(Object.values(jobStats).map(obj => obj['no']))
+    // console.log(Object.keys(jobStats))
+    // console.log(Object.values(jobStats).map(obj => obj['no']))
 
     const renderRadar = () => (
         <div className='radar-chart-container'>
