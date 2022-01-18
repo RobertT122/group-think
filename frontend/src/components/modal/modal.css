@@ -63,3 +63,42 @@
   overflow-y: auto;
   font-family: 'Outfit', serif;
 }
+
+.modal-child-index {
+  position: absolute;
+  top: 29%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+}
+
+.explain-index-container {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  font-family: 'Outfit', serif;
+}
+
+.modal-child-answer {
+  position: absolute;
+  top: 5%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  width: fit-content;
+}
+
+.explain-answer-container {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  font-family: 'Outfit', serif;
+}

@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { closeModal, openModal } from '../../actions/modal_actions';
 import Tutorial from '../main/explain';
 import ExplainForm from '../main/explain_form';
+import ExplainIndex from '../main/explain_index';
+import ExplainAnswer from '../main/explain_answer';
 import './modal.css'; 
 
 function Modal( {modal, openModal, closeModal} ) { 
@@ -17,6 +19,12 @@ function Modal( {modal, openModal, closeModal} ) {
             break;
         case 'form':
             component = <ExplainForm openModal={openModal} />
+            break;
+        case 'index':
+            component = <ExplainIndex openModal={openModal} />
+            break;
+        case 'answer':
+            component = <ExplainAnswer closeModal={closeModal} />
             break;
         default:
            return null;
