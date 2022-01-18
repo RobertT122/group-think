@@ -25,8 +25,6 @@ const toJobStats = (answers) => {
     // let count = 0;
     if(answers){
         answers.forEach(answer => {
-            // console.log(`iterations = ${count}`)
-            // count += 1
 
             let response = 'pass';
             if (answer.input) {
