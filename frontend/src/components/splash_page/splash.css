@@ -62,7 +62,7 @@
 
 .splash-main-text {
   position: absolute;
-  top: 20vh;
+  top: 11vh;
   width: 100vw;
   height: 40vh;
   display: flex;
@@ -84,11 +84,26 @@
 }
 
 .splash-body-container {
-  height: 80vh;
+  height: 60vh;
   width: 100vw;
 }
 
 .splash-skyline-container {
   position: absolute;
   bottom: 0px;
+}
+
+.splash-eye {
+  width: 30%;
+}
+
+.splash-eye-container {
+  z-index: -99;
+  width: 100vw;
+  height: 70vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  position: absolute;
+  bottom: 0%;
 }

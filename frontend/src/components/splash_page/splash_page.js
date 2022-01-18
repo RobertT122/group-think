@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 import Skyline from "../svgs/skyLine.svg"
 import groupThink from "../svgs/groupThinkLogo.svg"
+import Eye from "../svgs/eye.svg"
 import "./splash.css"
 
 class SplashPage extends React.Component {
@@ -18,6 +19,9 @@ class SplashPage extends React.Component {
               <Link className="login-btn" to='/login'>Log in</Link>
               <Link className="login-btn" to="/signup">Sign up</Link>
             </div>
+        </div>
+        <div className="splash-eye-container">
+          <img src={Eye} className="splash-eye" alt="Big Brother Eye"/>
         </div>
         <div className="splash-main-text">
           <div className="splash-header">Inspired by Orwell's 1984...</div>
