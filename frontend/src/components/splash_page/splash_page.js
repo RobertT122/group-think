@@ -1,10 +1,8 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import "./splash.css"
 import Skyline from "../svgs/skyLine.svg"
 import groupThink from "../svgs/groupThinkLogo.svg"
-import Answer from "../svgs/answers.png"
-import { Bar } from "react-chartjs-2"
+import "./splash.css"
 
 class SplashPage extends React.Component {
 
