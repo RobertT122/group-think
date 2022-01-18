@@ -263,15 +263,14 @@ div .fas.fa-question {
 .pie-chart-container {
     position: absolute;
     top: 10%;
-    height: 80%;
     width: 80%;
 }
 
 .bar-chart-container {
     position: absolute;
-    top: 10%;
-    height: 80%;
-    width: 80%;
+    top: 20%;
+    /* height: 80%; */
+    width: 90%;
 }
 
 .radar-chart-container {
