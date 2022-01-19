@@ -12,9 +12,9 @@ class SplashPage extends React.Component {
       <div className="splash-page-container">
         <div className="header-container">
             <img className="splash-logo" src={groupThink} alt="Logo"/>
-            <a className="linkedin-links" href="https://www.linkedin.com/in/robert-tetrault-28ba4b218/">Robert</a>
-            <a className="linkedin-links" href="https://www.linkedin.com/in/jacky-chen6825">Jacky</a>
-            <a className="linkedin-links" href="https://www.linkedin.com/in/liam-williams-76035613a/">Liam</a>
+            <a className="linkedin-links" href="https://www.linkedin.com/in/robert-tetrault-28ba4b218/" target='_blank'>Robert</a>
+            <a className="linkedin-links" href="https://www.linkedin.com/in/jacky-chen6825" target='_blank'>Jacky</a>
+            <a className="linkedin-links" href="https://www.linkedin.com/in/liam-williams-76035613a/" target='_blank'>Liam</a>
             <div className="links-container">
               <Link className="login-btn" to='/login'>Log in</Link>
               <Link className="login-btn" to="/signup">Sign up</Link>
