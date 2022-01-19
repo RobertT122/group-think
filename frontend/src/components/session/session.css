@@ -54,11 +54,6 @@ button:hover{
   font-size: 45px;
 }
 
-.session-form h1{
-  color: var(--primarycolor);
-  margin-bottom: 10px;
-}
-
 .demo-button{
   width: 60%;
   height: 50px;
