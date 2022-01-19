@@ -5,6 +5,7 @@ import Tutorial from '../main/explain';
 import ExplainForm from '../main/explain_form';
 import ExplainIndex from '../main/explain_index';
 import ExplainAnswer from '../main/explain_answer';
+import ExplainScore from '../main/explain_score';
 import './modal.css'; 
 
 function Modal( {modal, openModal, closeModal} ) { 
@@ -25,6 +26,9 @@ function Modal( {modal, openModal, closeModal} ) {
             break;
         case 'answer':
             component = <ExplainAnswer closeModal={closeModal} />
+            break;
+        case 'score':
+            component = <ExplainScore closeModal={closeModal} />
             break;
         default:
            return null;

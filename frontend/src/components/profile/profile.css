@@ -93,8 +93,9 @@
     display: none;
 }
 
-.group-think-score-container .fas.fa-question {
-    color: black;
+.group-think-score-container .fas.fa-question-circle {
+    color: rgb(100, 117, 141);
+    cursor: pointer;
 }
 
 .show-score-exp {
