@@ -49,6 +49,7 @@
 /* eye styling and placement */
 #eye-svg  {
     position: absolute;
-    top: -10%;
+    top: 12%;
     width: 80%;
+    height: 10%;
 }
