@@ -1,4 +1,7 @@
 # *group*Think
+
+Live Site: [groupThink](https://group-think-tm.herokuapp.com/#/splash) 
+
 ## Overview
 Group think is a crowd sourced question and answering application that focuses on getting users gut reactions. 
 The app allows you to ask a "Yes" or "No" questions to other users and get information on how people respond. Users will be given time limits to respond to questions, and receive rewards or penalties based on whether they answered as part of the majority. The function of this app is to apply social pressure and time pressure to users answering questions and provide feedback on their decisions.
