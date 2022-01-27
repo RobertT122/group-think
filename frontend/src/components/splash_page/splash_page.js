@@ -34,5 +34,4 @@ class SplashPage extends React.Component {
     )
   }
 }
-
 export default SplashPage
