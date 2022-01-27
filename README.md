@@ -1,6 +1,6 @@
 # *group*Think
 
-Live Site: <a href="https://group-think-tm.herokuapp.com/#/splash" target="_blank">groupThink</a>
+Live Site: <a href="https://group-think-gt.herokuapp.com/#/" target="_blank">groupThink</a>
 
 ## Overview
 Group think is a crowd sourced question and answering application that focuses on getting users gut reactions. 
