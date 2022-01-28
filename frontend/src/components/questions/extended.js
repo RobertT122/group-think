@@ -73,8 +73,8 @@ const Extended   = ({question, jobStats, ...props}) => {
     
     );
 
-    console.log(Object.keys(jobStats))
-    console.log(Object.values(jobStats).map(obj => obj['no']))
+    // console.log(Object.keys(jobStats))
+    // console.log(Object.values(jobStats).map(obj => obj['no']))
 
     const renderRadar = () => (
         <div>

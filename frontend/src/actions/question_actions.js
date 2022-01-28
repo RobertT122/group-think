@@ -93,7 +93,7 @@ export const fetchNextQuestion = () => dispatch => (
 export const removeQuestion = id => dispatch => (
     deleteQuestion(id)
         .then(() => dispatch(destroyQuestion(id))) 
-        .catch(err => console.log(err))
+        // .catch(err => console.log(err))
 );
 
 export const reactivate = id => dispatch => (
